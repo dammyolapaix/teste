@@ -1,0 +1,1373 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&display=swap');
+@import url(https://fonts.googleapis.com/css?family=Lato:300,400,700,900&display=swap);
+@charset "UTF-8";
+
+/*RESET*/
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background: #fff;
+  font-family: "Open Sans", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+li {
+  list-style: none;
+}
+
+.clear {
+  clear: both;
+}
+
+a {
+  color: #1a7ed4;
+  font-weight: 400;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+.btn-primary {
+  outline: 0;
+}
+
+input:focus,
+textarea:focus {
+  outline: 0 !important;
+  border: 0 !important;
+}
+
+input, textarea {
+  border-radius: 0!important;
+}
+
+h1 {
+  font-family: 'Lato', sans-serif;
+  font-size: 32px;
+  font-weight: 400;
+  color: #5f5d5d!important;
+}
+
+h2 {
+  font-size: 17px;
+  font-weight: 400;
+  color: #484848;
+}
+
+p {
+  font-size: 16px;
+  font-weight: 300;
+  color: #484848;
+  -webkit-font-smoothing: antialiased;
+}
+
+.btn-primary {
+  background: #8b0000!important;
+}
+
+.btn-outline-secondary {
+  border: 1px solid #ccc!important;
+  box-shadow: none;
+  color: #8b0000!important;
+}
+
+.btn-outline-secondary:hover {
+  box-shadow: none;
+}
+
+
+/*////////////////////////////////////////*/
+
+/*+Mobile*/
+
+@media only screen and (max-width: 400px) {
+  /*/// HEADER //////////////*/
+
+  .bg-light {
+    background: #8b0000 !important;
+  }
+
+  .navbar-brand {
+    width: 25%;
+  }
+
+  .nav-wrapper {
+    width: 100%;
+
+  }
+
+  .navbar-toggler {
+    float: right!important;
+    margin-top: 15px;
+  }
+
+  .navbar-brand img {
+    max-width: none;
+    width: 62px;
+  }
+
+  .navbar-light .navbar-nav .nav-link {
+    color: #fff !important;
+    text-transform: uppercase;
+  }
+
+  .navbar.navbar-light .navbar-toggler-icon {
+    background: url(/images/hamburguer.png?5eddb13580bc83e5f7559d6d6df4f611) center center no-repeat !important;
+    background-size: cover;
+  }
+
+  #hamburguer {
+    width: 15%;
+    float: right;
+    margin-right: -16%;
+  }
+
+  /*/// HOME PAGE //////////////*/
+
+  #slide-topo {
+    height: 450px;
+  }
+
+  #slide-topo img {
+    width: 250%;
+    height: 450px;
+  }
+
+  #slide-topo {
+    background: url(/img/mobile/Banner_Mobile_Vlt_Advogados_Direito_Imobiliário.jpg) center center no-repeat;
+    background-size: cover;
+  }
+
+  /*/// ULTIMAS NOTICIAS //////////////*/
+
+  section#ultimas-noticias .container,
+  section#social-media .container,
+  section#sobre .container,
+  section#profissionais .container,
+  section.area-atuacao .container,
+  section.form-area-atuacao .container {
+    text-align: center;
+    padding: 60px 5% 5px;
+  }
+
+  section#ultimas-noticias .col-noticias,
+  section#social-media .col-noticias,
+  section#sobre .col-noticias,
+  section#profissionais .col-noticias,
+  section.area-atuacao.col-noticias,
+  section.form-area-atuacao .col-noticias {
+    max-width: 95% !important;
+    margin: 0 auto;
+    margin-bottom: 25px;
+  }
+
+  section#ultimas-noticias img,
+  section#social-media img,
+  section#sobre img,
+  section#profissionais img,
+  section.area-atuacao img,
+  section.form-area-atuacao img {
+    height: auto;
+  }
+
+  section#ultimas-noticias h1,
+  section#social-media h1,
+  section#sobre h1,
+  section#profissionais h1,
+  section.area-atuacao h1,
+  section.form-area-atuacao h1 {
+    color: #2d2d2d;
+    margin: 0 auto;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+  }
+  .card {
+    margin-bottom: 25px;
+  }
+
+  .divisao {
+    width: 90%;
+    height: 1px;
+    background: #ececec;
+    margin: 0 auto;
+    margin-top: 35px;
+  }
+
+  /*/// MÍDIAS SOCIAIS //////////////*/
+
+  section#social-media .col-media,
+  section.form-area-atuacao .col {
+    width: 95%;
+    margin: 0 auto;
+  }
+
+  section#social-media .col-media div,
+  section.form-area-atuacao .col div {
+    background: #6c6ce2;
+    height: 200px;
+  }
+
+  section#social-media h1.withMargin,
+  section.form-area-atuacao h1.withMargin {
+    margin-top: 40px;
+  }
+
+  section#social-media input,
+  section#social-media textarea,
+  section.form-area-atuacao input,
+  section.form-area-atuacao textarea {
+    border: 1px solid #c51b1b;
+    margin-bottom: 10px !important;
+  }
+
+  section#social-media input:focus,
+  section#social-media textarea:focus,
+  section.form-area-atuacao input:focus,
+  section.form-area-atuacao textarea:focus {
+    border: none !important;
+    box-shadow: none !important;
+  }
+
+  section#social-media button.btn-unique,
+  section.form-area-atuacao button.btn-unique{
+    font-size: 16px;
+    width: 100%;
+    margin-left: 0;
+    background: #8b0000 !important;
+  }
+
+
+  /*/// PÁGINA PROFISSIONAIS //////////////*/
+
+  section#profissionais .adv01,
+  section#profissionais .adv02,
+  section#profissionais .adv03 {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    background: green;
+    margin: 0 auto 40px;
+  }
+
+  section#profissionais h2 {
+    font-size: 20px;
+    color: #8b0000;
+    font-weight: bold;
+    margin-bottom: 15px;
+  }
+
+  section#profissionais p {
+    text-align: center;
+    color: #6e6e6e;
+    margin-bottom: 50px;
+  }
+
+   /*/// PÁGINA ÁREAS ATUAÇAO  //////////////*/
+
+   .slide-topo {
+      height: 450px;
+   }
+   #slide-topo-bancario {
+      background: url(/img/mobile/Banner_Mobile_Vlt_Advogados_Direito_Bancário.jpg) center center no-repeat;
+      background-size: cover;
+      
+   }
+    #slide-topo-civil {
+      background: url(/img/mobile/Banner_Mobile_Vlt_Advogados_Direito_Civil.jpg) center center no-repeat;
+      background-size: cover;
+   }
+    #slide-topo-criminal {
+      background: url(/img/mobile/Banner_Mobile_Vlt_Advogados_Direito_Criminal.jpg) center center no-repeat;
+      background-size: cover;
+   }
+    #slide-topo-familia {
+      background: url(/img/mobile/Banner_Mobile_Vlt_Advogados_Direito_Família_e_Sucessão.jpg) center center no-repeat;
+      background-size: cover;
+   }
+    #slide-topo-imob {
+      background: url(/img/mobile/Banner_Mobile_Vlt_Advogados_Direito_Imobiliário.jpg) center center no-repeat;
+      background-size: cover;
+   }
+    #slide-topo-medico {
+      background: url(/img/mobile/Banner_Mobile_Vlt_Advogados_Direito_Médico.jpg) center center no-repeat;
+      background-size: cover;
+   }
+    #slide-topo-prev {
+      background: url(/img/mobile/Banner_Mobile_Vlt_Advogados_Direito_Previdenciário.jpg) center center no-repeat;
+      background-size: cover;
+   }
+    #slide-topo-trab {
+      background: url(/img/mobile/Banner_Mobile_Vlt_Advogados_Direito_Trabalhista.jpg) center center no-repeat;
+      background-size: cover;
+   }
+    #slide-topo-trib {
+      background: url(/img/mobile/Banner_Mobile_Vlt_Advogados_Direito_Tributário.jpg) center center no-repeat;
+      background-size: cover;
+   }
+
+   /*/// PÁGINA NOTICIAS //////////////*/
+
+   .logo-topo {
+      max-width: 100%;
+      padding: 40px 0 0 5%;
+   }
+   .round-logo {
+      width: 50px;
+      height: 50px;
+      background: url('../img/brand/logo.png') center center no-repeat;
+      background-size: cover;
+      border-radius: 50%;
+      float: left;
+      margin-left: 5%;
+   }
+   .data {
+      margin: 9px 0 0 24%;
+   }
+   .data h6 {
+      line-height: 14px;
+   }
+   .noticias-content {
+      max-width: 100%;
+      margin-left: 0;
+      margin-right: 0;
+      padding: 7px;
+      margin-top:15px;
+   }
+
+    .noticias-content img {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+    .noticias-content .btn-danger {
+      margin-left: 0;
+    }
+    .sidebar {
+      padding: 30px 7% 70px;
+    }
+    .sidebar input {
+      border: 1px solid #c51b1b;
+    }
+    .sidebar h2 {
+      font-size: 25px;
+      margin-top: 15px;
+    }
+    .sidebar h5 {
+      font-weight: 400;
+      margin-bottom: -15px;
+    }
+    .btn-login {
+      width: 100%;
+      margin-left: 0;
+      margin-bottom: 20px;
+      font-size: 18px;
+      padding-top: .4rem!important;
+      padding-bottom: .5rem!important;
+      color: #d83e3e!important;
+      border: 1px solid #d83e3e!important;
+      box-shadow: none;
+    }
+
+    .navbar-nav .nav-link {
+      color: #000;
+    }
+    .login {
+      width: 100%;
+      padding: 25px;
+    }
+
+     .login form {
+       padding: 20px 0;
+     }
+     .login form button {
+       margin-left: 0;
+     }
+     .noticias-wrapper h1 {
+        margin-left: 7%;
+     }
+
+     .container-fluid {
+        padding-left: 0;
+        padding-right: 0;
+     }
+
+   
+
+  /*/// PAGINA POST SINGLE //////////////*/
+
+    #wrapper-single h3 {
+        color: #444343;
+        margin: 15px 0 30px;
+      }
+    .img-banner {
+        width: 100%;
+        height: auto;
+        background-size: cover;
+        overflow: hidden;
+    }
+
+    .container-leia-mais {
+      padding: 7px 6%;
+    }
+    .container-leia-mais h2 {
+      font-size: 25px;
+      margin-bottom: 15px;
+    }
+
+    .post {
+      padding: 0 5%;
+    }
+
+    .post-texto p {
+      margin-bottom: 5px;
+    }
+
+
+  /*/// FOOTER //////////////*/
+
+  section#footer {
+    padding-top: 60px;
+  }
+
+  section#footer .container-fluid {
+    height: auto;
+    background: #F4F4F4;
+    color: #fff;
+    padding: 50px 20%;
+  }
+
+  section#footer .footer-texto {
+    text-align: center;
+  }
+
+  section#footer h4 {
+    font-size: 15px;
+    color: #777676;
+  }
+
+  section#footer p {
+    font-size: 14px;
+    margin-top: -28px;
+  }
+
+  section#footer .footer-logo {
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  section#footer h4.second {
+    margin-top: -32px;
+  }
+
+  .footer-texto img {
+    max-width: 20%;
+  }
+}
+
+/*end media*/
+
+/*////////////////////////////////////*/
+
+/*+Tablet*/
+
+@media only screen and (min-width: 400px) and (max-width: 1050px) {
+  /*/// HEADER //////////////*/
+
+  .bg-light {
+    background: #8b0000 !important;
+    padding: 10px 0;
+  }
+
+  .navbar-brand {
+    width: 10%;
+  }
+
+  .navbar-brand img {
+    width: 100%;
+  }
+
+  .navbar-light .navbar-nav .nav-link {
+    color: #fff !important;
+    text-transform: uppercase;
+  }
+
+  .navbar.navbar-light .navbar-toggler-icon {
+    background: url(/images/hamburguer.png?5eddb13580bc83e5f7559d6d6df4f611) center center no-repeat !important;
+    background-size: cover;
+  }
+
+  #hamburguer {
+    width: 4%;
+    float: right;
+    margin-top: -40px;
+    margin-right: -5%;
+  }
+
+  /*/// HOME PAGE //////////////*/
+
+  #slide-topo {
+      height: 270px;
+      background: url(/img/banner/Banner_Principal_Vlt_Advogados_Direito_Imobiliário.jpg) center center no-repeat;
+      background-size: cover;
+  }
+
+  /*/// ULTIMAS NOTICIAS //////////////*/
+
+  section#ultimas-noticias .container,
+  section#social-media .container,
+  section#sobre .container,
+  section#profissionais .container,
+  section.area-atuacao .container,
+  section.form-area-atuacao .container {
+    text-align: center;
+    padding: 50px 5% 5px;
+  }
+
+  section#ultimas-noticias .row-noticias,
+  section#social-media .row-noticias,
+  section#sobre .row-noticias,
+  section#profissionais .row-noticias,
+  section.area-atuacao .row-noticias,
+  section.form-area-atuacao .row-noticias {
+    display: flex;
+  }
+
+  section#ultimas-noticias .col-noticias,
+  section#social-media .col-noticias,
+  section#sobre .col-noticias,
+  section#profissionais .col-noticias,
+  section.area-atuacao .col-noticias,
+  section.form-area-atuacao .col-noticias {
+    max-width: 30% !important;
+    margin: 0 auto;
+    margin-bottom: 25px;
+  }
+
+  section#ultimas-noticias img,
+  section#social-media img,
+  section#sobre img,
+  section#profissionais img,
+  section.area-atuacao img,
+  section.form-area-atuacao img {
+    height: auto;
+  }
+
+  section#ultimas-noticias h1,
+  section#social-media h1,
+  section#sobre h1,
+  section#profissionais h1,
+  section.area-atuacao h1,
+  section.form-area-atuacao h1 {
+    color: #2d2d2d;
+    margin: 0 auto;
+    margin-bottom: 35px;
+    text-transform: uppercase;
+  }
+
+  .divisao {
+    width: 90%;
+    height: 1px;
+    background: #ececec;
+    margin: 0 auto;
+    margin-top: 35px;
+  }
+
+  .menor {
+    padding: 80px 10% 5px !important;
+  }
+
+  /*/// MÍDIAS SOCIAIS //////////////*/
+
+  section#social-media .container,
+  section.area-atuacao .container,
+  section.form-area-atuacao .container {
+    padding: 10px 4% 5px;
+  }
+
+  section#social-media .row-media,
+  section.form-area-atuacao .row {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+  }
+
+  section#social-media .col-media,
+  section.form-area-atuacao .col {
+    width: 32%;
+    margin: 0 auto;
+  }
+
+  section#social-media .col-media div,
+  section.form-area-atuacao .col div {
+    background: #6c6ce2;
+    height: 200px;
+  }
+
+  section#social-media h1,
+  section.form-area-atuacao h1 {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+
+  section#social-media h1.withMargin,
+  section.form-area-atuacao h1.withMargin {
+    margin-top: 40px;
+  }
+
+  section#social-media input,
+  section#social-media textarea,
+  section.form-area-atuacao input,
+  section.form-area-atuacao textarea {
+    border: 1px solid #c51b1b;
+    margin-bottom: 6px !important;
+  }
+
+  section#social-media input:focus,
+  section#social-media textarea:focus,
+  section.form-area-atuacao input:focus,
+  section.form-area-atuacao textarea:focus {
+    border: none !important;
+    box-shadow: none !important;
+  }
+
+  section#social-media button.btn-unique,
+  section.form-area-atuacao button.btn-unique {
+    font-size: 16px;
+    width: 100%;
+    margin-left: 0;
+    background: #8b0000 !important;
+  }
+
+
+  /*/// PÁGINA QUEM SOMOS //////////////*/
+
+  section#sobre .container {
+    padding: 80px 5% 5px;
+  }
+
+  section#sobre .container h1 {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+
+  /*/// PÁGINA PROFISSIONAIS //////////////*/
+
+  section#profissionais .adv01,
+  section#profissionais .adv02,
+  section#profissionais .adv03 {
+    width: 230px;
+    height: 230px;
+    border-radius: 50%;
+    background: green;
+    margin: 0 auto 40px;
+  }
+
+  section#profissionais h2 {
+    font-size: 20px;
+    color: #8b0000;
+    font-weight: bold;
+    margin-bottom: 15px;
+  }
+
+  section#profissionais p {
+    text-align: justify;
+    color: #6e6e6e;
+  }
+
+
+  /*/// PÁGINAS DIREITOS //////////////*/
+
+  section.form-area-atuacao .container {
+    padding: 45px 14% 5px;
+  }
+
+  /*/// PÁGINA NOTICIAS //////////////*/
+
+   .logo-topo {
+      max-width: 100%;
+      padding: 40px 0 0 5%;
+   }
+   .round-logo {
+      width: 50px;
+      height: 50px;
+      background: red;
+      border-radius: 50%;
+      float: left;
+      margin-left: 14%;
+      background: url('../img/brand/logo.png') center center no-repeat;
+      background-size: cover;
+   }
+   .data {
+      margin: 9px 0 0 23%;
+   }
+   .data h6 {
+      line-height: 14px;
+   }
+   .noticias-content {
+      max-width: 100%;
+      margin-left: 0;
+      margin-right: 0;
+      padding: 7px;
+      margin-top: 40px;
+      justify-content: space-around;
+   }
+
+    .noticias-content img {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+    .noticias-content .btn-danger {
+      margin-left: 0;
+    }
+    .post, hr {
+      width: 520px;
+    }
+    .sidebar {
+      padding: 30px 2% 70px;
+    }
+    .sidebar input {
+      border: 1px solid #c51b1b;
+    }
+    .sidebar h2 {
+      font-size: 25px;
+      margin-top: 15px;
+    }
+    .sidebar h5 {
+      font-weight: 400;
+      margin-bottom: -15px;
+    }
+    .btn-login {
+      width: 100%;
+      margin-left: 0;
+      margin-bottom: 20px;
+      font-size: 14px;
+    }
+
+  /*/// PAGINA POST SINGLE //////////////*/
+
+  .login {
+     padding: 40px 4% 30px!important;
+  }
+  .container .noticias-wrapper h1 {
+    margin-left: 17%;
+  }
+  .post {
+    width:600px;
+    margin: 0 auto;
+  }
+  .btn-login {
+    margin-top: 0;
+  }
+
+  .navbar-nav .nav-link {
+    color: #000;
+  }
+
+  #wrapper-single h1 {
+      margin-left: 11%;
+  }
+  #wrapper-single h3 {
+      color: #444343;
+      margin: 45px 0 30px;
+  }
+  .img-banner {
+      width: 100%;
+      height: 320px;
+      background-size: cover;
+      overflow: hidden;
+  }
+
+  #wrapper-single .round-logo {
+    margin-left: 9%;
+  }
+  #wrapper-single .data {
+    margin-left: 19%;
+  }
+
+  /*/// FOOTER //////////////*/
+
+  section#footer {
+    padding-top: 60px;
+  }
+
+  section#footer .container-fluid {
+    height: auto;
+    background: #F4F4F4;
+    color: #fff;
+    padding: 50px 20%;
+  }
+
+  section#footer .footer-texto {
+    text-align: center;
+  }
+
+  section#footer h4 {
+    font-size: 15px;
+    color: #777676;
+  }
+
+  section#footer p {
+    font-size: 14px;
+    margin-top: -28px;
+  }
+
+  section#footer .footer-logo {
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  section#footer h4.second {
+    margin-top: -32px;
+  }
+
+  .footer-texto img {
+    max-width: 10%;
+  }
+}
+
+/*end media*/
+
+/*////////////////////////////////////*/
+
+/*+Desktop*/
+
+@media only screen and (min-width: 1050px) {
+  /*/// HEADER //////////////*/
+
+  .bg-light {
+    width: 100%;
+    height: 120px;
+    background: #8b0000!important;
+    display: flex;
+    justify-content: center!important;
+  }
+  .nav-wrapper {
+    display: flex;
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  .mr-auto, .mx-auto {
+    margin-right: 0!important;
+  }
+
+  .navbar-brand {
+    position: relative;
+    left: 10%;
+    width: 10%;
+  }
+
+  .navbar-brand img {
+    width: 100%;
+  }
+
+  .navbar-nav .mr-auto {
+    margin-right: none !important;
+  }
+
+  .navbar-light .navbar-nav .nav-link {
+    color: #fff !important;
+    text-transform: uppercase;
+  }
+
+  .navbar.navbar-light .navbar-toggler-icon {
+    background: url(/images/hamburguer.png?5eddb13580bc83e5f7559d6d6df4f611) center center no-repeat !important;
+    background-size: cover;
+  }
+
+  .navbar-expand-lg .navbar-collapse {
+    justify-content: center;
+    margin-top: 20px;
+  }
+
+  .navbar-expand-lg .navbar-nav .nav-link {
+    padding-right: 0.8rem;
+    padding-left: 0.8rem;
+  }
+
+  .navbar-expand-lg .navbar-nav .nav-link:hover {
+    color: #ccc!important;
+  }
+
+  #hamburguer {
+    width: 4%;
+    float: right;
+    margin-top: -57px;
+    margin-right: -5%;
+  }
+
+  .navbar .navbar-expand-lg .navbar-light .bg-light {
+    display: flex;.
+    max-width: 80%;
+    margin: 0 auto;
+    justify-content: center;
+    text-align: center;
+  }
+
+
+  /*/// HOME PAGE //////////////*/
+
+  #slide-topo {
+    height: 450px;
+    background: url(/img/banner/Banner_Principal_Vlt_Advogados_Direito_Imobiliário.jpg) center center no-repeat;
+    background-size: cover;
+  }
+
+
+  /*/// ULTIMAS NOTICIAS //////////////*/
+
+  section#ultimas-noticias .container,
+  section#social-media .container,
+  section#sobre .container,
+  section#profissionais .container,
+  section.area-atuacao .container,
+  section.form-area-atuacao .container {
+    text-align: center;
+    padding: 80px 3% 5px;
+  }
+
+  section#ultimas-noticias .row-noticias,
+  section#social-media .row-noticias,
+  section#sobre .row-noticias,
+  section#profissionais .row-noticias,
+  section.area-atuacao .row-noticias,
+  section.form-area-atuacao .row-noticias {
+    display: flex;
+  }
+
+  section#ultimas-noticias .col-noticias,
+  section#social-media .col-noticias,
+  section#sobre .col-noticias,
+  section#profissionais .col-noticias,
+  section.area-atuacao .col-noticias,
+  section.form-area-atuacao .col-noticias {
+    max-width: 30% !important;
+    margin: 0 auto;
+    margin-bottom: 25px;
+  }
+
+  section#ultimas-noticias img,
+  section#social-media img,
+  section#sobre img,
+  section#profissionais img,
+  section.area-atuacao img,
+  section.form-area-atuacao img {
+    height: auto;
+  }
+
+  section#ultimas-noticias h1,
+  section#social-media h1,
+  section#sobre h1,
+  section#profissionais h1,
+  section.area-atuacao h1,
+  section.form-area-atuacao h1 {
+    color: #2d2d2d;
+    margin: 0 auto;
+    margin-bottom: 35px;
+    text-transform: uppercase;
+  }
+
+  section.area-atuacao p {
+    color: #6e6e6e;
+    text-align: justify;
+  }
+
+  .divisao {
+    width: 90%;
+    height: 1px;
+    background: #ececec;
+    margin: 0 auto;
+    margin-top: 35px;
+  }
+
+  .menor {
+    padding: 80px 12% 5px !important;
+  }
+
+  /*/// MÍDIAS SOCIAIS //////////////*/
+
+  section#social-media .container,
+  section.form-area-atuacao .container {
+    padding: 10px 4% 5px;
+  }
+
+  section#social-media .row-media,
+  section.form-area-atuacao .row {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+  }
+
+  section#social-media .col-media,
+  section.form-area-atuacao .col {
+    width: 32%;
+    margin: 0 auto;
+  }
+
+  section#social-media .col-media div,
+  section.form-area-atuacao .col div {
+    background: #6c6ce2;
+    height: 200px;
+  }
+
+  section#social-media h1,
+  section.form-area-atuacao h1 {
+    font-size: 20px;
+    margin-bottom: 35px;
+  }
+
+  section#social-media h1.withMargin,
+  section.form-area-atuacao h1.withMargin {
+    margin-top: 40px;
+  }
+
+  section#social-media input,
+  section#social-media textarea,
+  section.form-area-atuacao input,
+  section.form-area-atuacao textarea {
+    border: 1px solid #c51b1b;
+    margin-bottom: 10px !important;
+  }
+
+  section#social-media input:focus,
+  section#social-media textarea:focus,
+  section.form-area-atuacao input:focus,
+  section.form-area-atuacao textarea:focus {
+    border: none !important;
+    box-shadow: none !important;
+  }
+
+  section#social-media button.btn-unique,
+  section.form-area-atuacao button.btn-unique {
+    font-size: 16px;
+    width: 100%;
+    margin-left: 0;
+    background: #8b0000 !important;
+  }
+
+
+  /*/// PÁGINA QUEM SOMOS //////////////*/
+
+  section#sobre .container h1 {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+
+  /*/// PÁGINA PROFISSIONAIS //////////////*/
+
+  section#profissionais .adv01,
+  section#profissionais .adv02,
+  section#profissionais .adv03 {
+    width: 270px;
+    height: 270px;
+    border-radius: 50%;
+    background: green;
+    margin: 0 auto 40px;
+  }
+
+  div.profissionais {
+    max-width: 32%;
+  }
+
+  section#profissionais h1 {
+    margin-bottom: 50px;
+  }
+
+  section#profissionais h2 {
+    font-size: 18px;
+    color: #8b0000;
+    font-weight: 700;
+    margin-bottom: 15px;
+  }
+
+  section#profissionais p {
+    max-width: 90%;
+    text-align: justify;
+    margin-left: 6%;
+    color: #6e6e6e;
+  }
+
+  .divisao-profissionais {
+    width: 2px;
+    height: 100vh;
+    background: #ececec;
+  }
+
+/*/// PÁGINA ÁREAS ATUAÇAO  //////////////*/
+
+   .slide-topo {
+      height: 450px;
+   }
+   #slide-topo-bancario {
+      background: url(/img/banner/Banner_Principal_Vlt_Advogados_Direito_Bancário.jpg) center center no-repeat;
+      background-size: cover;
+      
+   }
+    #slide-topo-civil {
+      background: url(/img/banner/Banner_Principal_Vlt_Advogados_Direito_Civil.jpg) center center no-repeat;
+      background-size: cover;
+   }
+    #slide-topo-criminal {
+      background: url(/img/banner/Banner_Principal_Vlt_Advogados_Direito_Criminal.jpg) center center no-repeat;
+      background-size: cover;
+   }
+    #slide-topo-familia {
+      background: url(/img/banner/Banner_Principal_Vlt_Advogados_Direito_Família_e_Sucessão.jpg) center center no-repeat;
+      background-size: cover;
+   }
+    #slide-topo-imob {
+      background: url(/img/banner/Banner_Principal_Vlt_Advogados_Direito_Imobiliário.jpg) center center no-repeat;
+      background-size: cover;
+   }
+    #slide-topo-medico {
+      background: url(/img/banner/Banner_Principal_Vlt_Advogados_Direito_Médico.jpg) center center no-repeat;
+      background-size: cover;
+   }
+    #slide-topo-prev {
+      background: url(/img/banner/Banner_Principal_Vlt_Advogados_Direito_Previdenciario.jpg) center center no-repeat;
+      background-size: cover;
+   }
+    #slide-topo-trab {
+      background: url(/img/banner/Banner_Principal_Vlt_Advogados_Direito_Trabalhista.jpg) center center no-repeat;
+      background-size: cover;
+   }
+    #slide-topo-trib {
+      background: url(/img/banner/Banner_Principal_Vlt_Advogados_Direito_Tribuitário.jpg) center center no-repeat;
+      background-size: cover;
+   }
+
+  /*/// PÁGINAS DIREITOS //////////////*/
+
+  section.form-area-atuacao .container {
+    padding: 45px 12% 5px;
+  }
+
+  section.form-area-atuacao .container h1 {
+    font-size: 35px;
+    color: #5f5d5d;
+  }
+
+  section.form-area-atuacao .container button {
+    height: 60px;
+  }
+
+  /*/// PÁGINA NOTICIAS //////////////*/
+
+   .logo-topo {
+      max-width: 100%;
+      padding: 40px 0 0 5%;
+   }
+   .round-logo {
+      width: 50px;
+      height: 50px;
+      background: red;
+      border-radius: 50%;
+      float: left;
+      background: url('../img/brand/logo.png') center center no-repeat;
+      background-size: cover;
+   }
+   .data {
+      margin: 9px 0 0 20%;
+   }
+   .data h6 {
+      line-height: 14px;
+   }
+   .noticias-content {
+      max-width: 100%;
+      margin-left: 0;
+      margin-right: 0;
+      padding: 10px 5%;
+      margin-top: 12px;
+      justify-content: flex-start;
+   }
+
+    .noticias-content img {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+    .noticias-wrapper {
+      width: 100%;
+      float: left;
+    }
+    .noticias-wrapper h1 {
+      margin-left: 6%;
+    }
+    .posts-topo {
+      height: 90px;
+      text-align: center;
+    }
+    .posts-topo a {
+      color: #000;
+      font-size: 15px;
+    }
+    .noticias-content .btn-danger {
+      margin-left: 0;
+    }
+    .post-wrapper h3 {
+      font-size: 20px;
+      text-align: left;
+    }
+
+    .post-wrapper p {
+      text-align: justify;
+      margin-bottom: 10px;
+    }
+    .row.login {
+      padding: 30px 4%;
+    }
+    .sidebar {
+      padding: 30px 5% 70px;
+    }
+    .login input {
+      width: 62%;
+      height: 35px;
+      float: left;
+      border: 1px solid #c51b1b;
+    }
+    .login button {
+      display: flex;
+      justify-content: center;
+      width: 15%;
+      height: 37px;
+      float: left;
+      margin-top: -1px;
+      margin-left: -1px;
+    }
+   
+    .btn-login {
+      width: 60%;
+      height: 37px;
+      margin-left: 0;
+      margin-top: 0;
+      font-size: 14px;
+      margin-right: 15%;
+      line-height: 15px;
+      color: #d83e3e!important;
+      border: 1px solid #d83e3e!important;
+      box-shadow: none;
+    }
+     .btn-login:hover {
+        box-shadow: -1px 4px 7px -3px rgba(184,184,184,1);
+        color: #d83e3e!important;
+        border: 1px solid #d83e3e!important;
+     }
+
+     .more-info p {
+        float: right;
+        position: absolute;
+        bottom: 25px;
+        right: 6%;
+     }
+
+    /*/// PAGINA POST SINGLE //////////////*/
+
+    #wrapper-single .noticias-wrapper h1 {
+      margin-left: 15%;
+    }
+    #wrapper-single .post {
+      margin: 0 auto;
+    }
+    #wrapper-single #img-single {
+      width: 60%;
+    }
+    #wrapper-single .btn-login {
+      margin-top: 0;
+    }
+    .btn-login {
+      margin-left: -20%;
+    }
+
+    #wrapper-single .navbar-nav .nav-link {
+      color: #000;
+      font-size: 15px;
+    }
+
+    #wrapper-single .round-logo {
+      margin-left: 3%;
+    }
+    #wrapper-single .data {
+      margin: 9px 0 0 9%;
+    }
+    #wrapper-single .post-wrapper h3 {
+      color: #444343;
+      font-size: 30px;
+      margin-top: 40px;
+      margin-bottom: 30px;
+    }
+    #wrapper-single hr {
+      width: 860px;
+    }
+    .img-banner {
+      width: 100%;
+      height: 430px;
+      background-size: cover;
+      overflow: hidden;
+    }
+    .onde-esta:hover {
+      text-decoration: underline;
+    }
+
+    .container-leia-mais {
+      padding: 10px 9%;
+    }
+    .container-leia-mais h2 {
+      font-size: 25px;
+      margin-bottom: 10px;
+    }
+
+
+  /*/// FOOTER //////////////*/
+
+  section#footer {
+    padding-top: 60px;
+  }
+
+  section#footer .container-fluid {
+    height: auto;
+    background: #F4F4F4;
+    color: #fff;
+    padding: 50px 20%;
+  }
+
+  section#footer .footer-texto {
+    text-align: center;
+  }
+
+  section#footer h4 {
+    font-size: 15px;
+    color: #777676;
+  }
+
+  section#footer p {
+    font-size: 14px;
+    margin-top: -28px;
+  }
+
+  section#footer .footer-logo {
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  section#footer h4.second {
+    margin-top: -32px;
+  }
+
+   .footer-texto img {
+    max-width: 5%;
+  }
+}
+
