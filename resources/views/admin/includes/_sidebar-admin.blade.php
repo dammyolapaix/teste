@@ -43,7 +43,7 @@
               </li>
            
               <li class="teste">
-                <a href="#"><i class="fas fa-user"></i>Meu perfil</a>
+                <a href="{{ route('user.index', ['id'=>$currentUser->id]) }}"><i class="fas fa-user"></i>Meu perfil</a>
               </li>
             </ul>
         </nav>

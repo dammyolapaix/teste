@@ -63,12 +63,12 @@
         <div class="row-media">
           <div class="col-media">
             <h1>Acompanhe nas mídias sociais</h1>
-            <div class="media-face"></div>
+            <div class="media-face" id="media-face"></div>
           </div>
 
           <div class="col-media">
-            <h1 class="withMargin">Acompanhe nas mídias sociais</h1>
-            <div class="media-face"></div>
+            <h1 class="withMargin">Entre em contato conosco</h1>
+            <a href="{{ route('contato') }}"><div class="media-face" id="media-face02"></div></a>
           </div>
           
           <div class="col-media">

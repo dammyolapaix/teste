@@ -151,6 +151,8 @@ p {
     background-size: cover;
   }
 
+
+
   /*/// ULTIMAS NOTICIAS //////////////*/
 
   section#ultimas-noticias .container,
@@ -214,12 +216,6 @@ p {
     margin: 0 auto;
   }
 
-  section#social-media .col-media div,
-  section.form-area-atuacao .col div {
-    background: #6c6ce2;
-    height: 200px;
-  }
-
   section#social-media h1.withMargin,
   section.form-area-atuacao h1.withMargin {
     margin-top: 40px;
@@ -247,6 +243,17 @@ p {
     width: 100%;
     margin-left: 0;
     background: #8b0000 !important;
+  }
+
+  #media-face {
+    height: 350px;
+    background: blue;
+  }
+
+  #media-face02 {
+    height: 350px;
+    background: url(/img/mobile/Banner_Mobile_Vlt_Advogados_Direito_Imobiliário.jpg) center center no-repeat;
+    background-size: cover;
   }
 
 
@@ -1017,10 +1024,15 @@ p {
     margin: 0 auto;
   }
 
-  section#social-media .col-media div,
-  section.form-area-atuacao .col div {
-    background: #6c6ce2;
-    height: 200px;
+  #media-face {
+    height: 350px;
+    background: blue;
+  }
+
+  #media-face02 {
+    height: 350px;
+    background: url(/img/mobile/Banner_Mobile_Vlt_Advogados_Direito_Imobiliário.jpg) center center no-repeat;
+    background-size: cover;
   }
 
   section#social-media h1,
