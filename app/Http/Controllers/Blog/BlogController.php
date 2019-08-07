@@ -13,12 +13,15 @@ class BlogController extends Controller
 
 	// Show all posts with pagination
      public function getIndex() {
-        
-        $user = Auth::user();
 
-        $posts = Post::orderBy('id','desc')->paginate(6);
+        // $posts = Post::orderBy('id','desc')->paginate(6);
+        $posts = Post::with('author')->get();
+
+        dd($posts);
         
-        return view('blog.index', compact('posts','user'));
+        // return view('blog.index', compact('posts'));
+
+
     }
 
     // Show post single
@@ -27,7 +30,7 @@ class BlogController extends Controller
         $posts = Post::orderBy('id','desc')->paginate(3);
         $post = Post::where('slug', $slug)->first(); 
 
-        $user = $post->user; 
+        $user = $post->author; 
 
         return view('blog.single', compact('post', 'posts','user'));
     }

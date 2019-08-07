@@ -45,9 +45,12 @@ class User extends Authenticatable
 
     public function posts() {
 
-        return $this->hasMany('App\Models\Admin\Post');
+        return $this->hasMany('App\Models\Admin\Post' , 'user_id' , 'id'); 
     }
 
 
 
 }// end class
+
+
+
