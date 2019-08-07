@@ -18,10 +18,13 @@
               <div class="row noticias-content">
 
                  @foreach($posts as $post)
+                 
                     <div class="col-md-4">
                         <div class="card" style="margin-bottom: 25px;min-height: 540px;max-height: 540px;">
                           <div class="author" style="padding: 15px 0 15px 3%;">
-                              <div class="round-logo"></div>
+                              <div class="round-logo">
+                                <img src="{{ $user->image }}" alt="VLT Advogados" style="border-radius: 50%;">
+                              </div>
                               <div class="data">
                                   <h6 style="font-weight: bold;">VLT Advogados</h6>
                                   <h6>{{date('j M, Y', strtotime($post->created_at))}}</h6>

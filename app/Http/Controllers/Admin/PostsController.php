@@ -4,33 +4,34 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\User;
 use App\Models\Admin\Post;
 use App\Http\Requests\ValidateStorePost;
 use Illuminate\Support\Facades\Storage;
 use Session;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Auth;
 
 
 class PostsController extends Controller
 {
     // Show all posts
-    public function getIndex()
-    {
-        $posts = Post::orderBy('id','desc')->paginate(5);
-        return view('admin.posts.index')->with('posts',$posts);
-    }
+    // Essa funçao está no HomeController
 
    // Create
     public function getCreate()
-    {
+    {   
+
         return view('admin.posts.create');
     }
 
     public function setStore(ValidateStorePost $request)
     {
+        // finding the user
+        $user = Auth::user();
 
         // instanciando o model Post
-        $post = new Post;
+        $post = new Post();
 
         $post->title = $request->title;
         $post->slug = Str::slug($post->title, '-');
@@ -46,7 +47,7 @@ class PostsController extends Controller
         }
 
         // Saving the post
-        $post->save();
+        $user->posts()->save($post);
 
         Session::flash('success',' O post foi salvo com sucesso!');
         return redirect()->route('admin.show', $post->id);    

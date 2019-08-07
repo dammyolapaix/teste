@@ -61,9 +61,9 @@
 
                           <tr>
                         
-                            <td style="padding: 10px;">{{ $user->name }}</td> 
-                            <td style="padding: 10px 7px;">{{ $user->email }}</td>
-                            <td style="width: 50px;"><img src="{{ $user->image }}" alt="" style="width: 80%;"></td>
+                            <td style="padding: 10px;max-width: 100px;">{{ $user->name }}</td> 
+                            <td style="padding: 10px 2px;max-width: 60px;">{{ $user->email }}</td>
+                            <td style="width: 80px;"><img src="{{ $user->image }}" alt="" style="width: 80%;"></td>
 
                             <td class="button">
                               <a href="{{route('user.show', ['id' => $user->id])}}" style="width: 100%;">
@@ -73,7 +73,7 @@
 
                              <td class="button">
                               <a href="{{route('user.edit', ['id' => $user->id])}}" style="width: 100%;">
-                                <button class="btn btn-warning btn-sm" style="width: 50px;padding: 5px 0;margin-left: -90px;"><i class="fas fa-pencil-alt" style="font-size: 16px;color: #fff;"></i></button>
+                                <button class="btn btn-warning btn-sm" style="width: 50px;padding: 5px 0;margin-left: -165px;"><i class="fas fa-pencil-alt" style="font-size: 16px;color: #fff;"></i></button>
                               </a>
                             </td>
 

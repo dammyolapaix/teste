@@ -56,17 +56,18 @@
                           <th>Texto</th>
                           <th>Categoria</th>
                           <th>Imagem</th>
+                          <th>Autor</th>
                           <th colspan="3">Ações</th>
                         </tr>
                       </thead>
 
                       <tbody>
                         
-                        @foreach($posts as $post)
+                        @foreach($user->posts as $post)
 
                           <tr>
                             <!-- <th scope="row">{{$post->id}}</th> -->
-                            <td style="padding: 10px;">{{ substr($post->title, 0, 55) }}{{ strlen($post->title) > 55 ? " ..." : "" }}</td>
+                            <td style="padding: 10px;">{{ substr($post->title, 0, 50) }}{{ strlen($post->title) > 50 ? " ..." : "" }}</td>
                             
                             <td style="padding: 10px 7px;">
                               {{substr(strip_tags($post->body), 0, 40) . '...'}}
@@ -75,7 +76,9 @@
 
                             <td style="padding: 10px;">{{$post->category}}</td>
 
-                            <td style="width: 50px;"><img src="{{ $post->image }}" alt="" style="width: 80%;"></td>
+                            <td style="width: 50px;"><img src="{{ $post->image }}" alt="" style="width: 100%;"></td>
+
+                             <td style="width: 50px;"><img src="{{ $user->image }}" alt="" style="width: 100%;"></td>
 
                             <td class="button">
                               <a href="{{route('admin.show', ['id' => $post->id])}}" style="width: 100%;">

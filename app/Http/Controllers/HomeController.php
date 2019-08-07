@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Admin\Post;
-// use Illuminate\Auth\Middleware\Authenticate;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
@@ -25,8 +25,10 @@ class HomeController extends Controller
      */
     public function getIndex()
     {   
+        $user = Auth::user();
+
         $posts = Post::orderBy('id','desc')->paginate(5);
-        return view('admin.posts.index')->with('posts',$posts);
+        return view('admin.posts.index')->with('posts',$posts)->with('user',$user);
     }
 
     public function getLogin()

@@ -19,6 +19,17 @@
     
     <title>@yield('title')</title>
 
+     <!-- Load Facebook SDK for JavaScript -->
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+   </script>
+
   </head>
 
   <body>
@@ -64,9 +75,7 @@
                     <a class="dropdown-item" href="{{ route('direitomedico') }}">Direito Médico</a>
                     <a class="dropdown-item" href="{{ route('direitoprevidenciario') }}">Direito Previdenciário</a>
                     <a class="dropdown-item" href="{{ route('direitotrabalhista') }}">Direito Trabalhista</a>
-                    <a class="dropdown-item" href="{{ route('direitotributario') }}">Direito Tributário</a>
-                <div class="dropdown-divider"></div>
-                  <a class="dropdown-item" href="{{ route('contato') }}">Saiba Mais</a>
+                    <a class="dropdown-item" href="{{ route('direitotributario') }}">Direito Tributário</a>               
               </div>
             </li>
             <li class="{{ Request::is('posts') ? 'active' : '' }}">

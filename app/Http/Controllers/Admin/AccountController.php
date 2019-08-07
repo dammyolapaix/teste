@@ -9,14 +9,13 @@ use Illuminate\Support\Facades\Storage;
 use Session;
 use Illuminate\Support\Str;
 
+
 class AccountController extends Controller
 {
-  
+
 	public function getIndex($id) {
 
 		$user = User::find($id);
-
-        // dd($user);
 
 		return view('admin.account.index')->with('user',$user);
 
@@ -68,6 +67,7 @@ class AccountController extends Controller
         Session::flash('success',' Perfil atualizado com sucesso!');
         return redirect()->route('admin.index');
     }
+
 
 
 }// end class

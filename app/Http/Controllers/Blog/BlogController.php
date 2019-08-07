@@ -5,25 +5,31 @@ namespace App\Http\Controllers\Blog;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Admin\Post;
+use App\User;
+use Illuminate\Support\Facades\Auth;
 
 class BlogController extends Controller
 {
+
 	// Show all posts with pagination
      public function getIndex() {
+        
+        $user = Auth::user();
 
-     	$posts = Post::orderBy('id','desc')->paginate(6);
-
-        return view('blog.index')->with('posts', $posts);
+        $posts = Post::orderBy('id','desc')->paginate(6);
+        
+        return view('blog.index', compact('posts','user'));
     }
 
     // Show post single
      public function getSingle($slug) {
 
         $posts = Post::orderBy('id','desc')->paginate(3);
-
         $post = Post::where('slug', $slug)->first(); 
 
-        return view('blog.single', compact('post', 'posts'));
+        $user = $post->user; 
+
+        return view('blog.single', compact('post', 'posts','user'));
     }
 
 

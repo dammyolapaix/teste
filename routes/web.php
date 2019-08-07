@@ -11,9 +11,8 @@
 |
 */
 
-use App\Models\Auth\User;
-use App\Models\Auth\Role;
-
+use App\User;
+use App\Models\User\Role;
 
 
 Route::group(['middleware' => ['web']], function() {
@@ -76,7 +75,33 @@ Route::group(['middleware' => ['web']], function() {
 	// edit user account
 	Route::get('/admin/{id}/edit', 'Admin\AccountController@getEdit')->name('user.edit');
 	Route::post('/admin/{id}/edit', 'Admin\AccountController@setUpdate')->name('user.update');
-	
+
+	// --- Users Permissions---
+	/// Create user permission
+	Route::get('/create', function () {
+
+		$user = User::find(2);
+
+		$role = new Role;
+		$role->name = "Autor";
+
+		$user->roles()->save($role);
+
+    	return "Permissão para o usuário criada com sucesso!";
+
+	});
+
+	// Read user permission
+	Route::get('/read', function () {
+
+		$user = User::findOrFail(2);
+
+	    foreach ($user->roles as $role) {
+	    	
+	    	echo "O usuário " .$user->name. " tem permissão de: ".$role->name."<br />";
+	    }
+	});
+
 	
 }); // end route group
 

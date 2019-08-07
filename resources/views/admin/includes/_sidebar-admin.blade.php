@@ -11,8 +11,9 @@
             <div class="avatar"><img src="{{ $currentUser->image }}" alt="..." class="img-fluid rounded-circle"></div>
             <div class="title">
               <h1 class="h5">{{ $currentUser->name }}</h1>
-
-              <p class="no-margin-bottom">Admin</p>
+     
+                  <p class="no-margin-bottom">role</p>
+          
             </div>
           </div>
           
@@ -25,7 +26,7 @@
                 <a href="{{ route('admin.create') }}"><i class="fas fa-file"></i>Novo post</a>
               </li>
               <li class="{{ Request::is('admin/search') ? 'active' : '' }}">
-                <a href="#exampledropdownDropdown" aria-expanded="false" data-toggle="collapse"><i class="fas fa-window-restore"></i>Tags 
+                <a href="#exampledropdownDropdown" aria-expanded="false" data-toggle="collapse"><i class="fas fa-window-restore"></i>Categorias
                 </a>
                   <ul id="exampledropdownDropdown" class="collapse list-unstyled ">
                      <li><a href="{{ route('admin.search', ['id'=>1]) }}" id="01">Todos os posts</a></li>

@@ -27,10 +27,14 @@
 
               <div class="row noticias-content">
                    <div class="col-md-12" style="background: #fff;padding: 25px 0;">
-                      <div class="round-logo"></div>
+
+                      <div class="round-logo" style="width: 60px;height: 60px;float: left;border-radius: 50%;">
+                        <img src="{{ $user->image }}" alt="VLT Advogados" style="border-radius: 50%;">
+                      </div>
+
                       <div class="data">
-                          <h6>VLT Advogados</h6>
-                          <h6>Jun/2019</h6>
+                          <h6>Por <span style="color: #008fd5;font-weight: bold;">{{ $user->name }}</span></h6>
+                          <h6>{{date('j M, Y', strtotime($post->created_at))}}</h6>
                         </div>
 
                         <div class="post-wrapper" style="margin: 25px 0 20px;">
@@ -45,6 +49,12 @@
                             </div>
                             <hr style="padding: 5px 0;margin-top: 35px;">
                         </div>
+
+                        <!-- Your like button code -->
+                        <div style="margin-left: 15%;">
+                          <div class="fb-like" data-href="https://developers.facebook.com/docs/plugins/" data-width="" data-layout="standard" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>
+                        </div>
+
                    </div><!-- end post -->
 
                 </div><!-- end row -->
@@ -75,11 +85,9 @@
                         </div>
                      @endforeach
                 </div>
+              
               </div><!-- end container -->
 
-              <div class="container">
-                
-              </div>
 
        </div><!-- end container geral -->
 
