@@ -48,11 +48,11 @@
 
             <div class="row">
               <div class="col-sm-6">  
-                <a href="{{route('user.edit', ['id' => $user->id])}}" class="btn btn-warning btn-sm" style="width: 70px;padding: 8px 0;margin-right: -40px;">Editar</a>
+                <a href="{{ route('user.edit', ['id' => $user->id]) }}" class="btn btn-warning btn-sm" style="width: 70px;padding: 8px 0;margin-right: -40px;">Editar</a>
               </div>
 
               <div class="col-sm-6">  
-                <a href="{{ route('admin.index') }}" class="btn btn-light btn-sm" style="width: 70px;padding: 8px 0;">Voltar</a>
+                <a href="{{ route('user.index',['id' => $user->id]) }}" class="btn btn-light btn-sm" style="width: 70px;padding: 8px 0;">Voltar</a>
               </div>
             </div>
           </div>

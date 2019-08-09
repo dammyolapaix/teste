@@ -59,7 +59,7 @@
 
          <div class="container-fluid">
           <ul class="breadcrumb">
-            <li class="breadcrumb-item"><a href="{{ route('admin.index') }}">Home</a></li>
+            <li class="breadcrumb-item"><a href="{{ route('post.index') }}">Home</a></li>
             <li class="breadcrumb-item active">Editar o post</li>
           </ul>
         </div>
@@ -74,7 +74,7 @@
                   <div class="title"><strong class="d-block">Editar o post</strong></div>
                   <div class="block-body">
 
-                    <form action="{{route('admin.update', ['id' => $post->id])}}" method="POST" enctype="multipart/form-data">
+                    <form action="{{route('post.update', ['id' => $post->id])}}" method="POST" enctype="multipart/form-data">
 
                       @csrf
                       {{ method_field('POST') }}
@@ -134,7 +134,7 @@
 
                       <div class="form-group">       
                         <input type="submit" value="Salvar" class="btn btn-primary"  style="width: 100px;height: 50px;"/>
-                        <a href="{{ route('admin.index') }}" class="btn btn-primary" style="width: 100px;height: 50px;margin-left: 1%;line-height: 35px;">Cancelar</a>
+                        <a href="{{ route('post.index') }}" class="btn btn-primary" style="width: 100px;height: 50px;margin-left: 1%;line-height: 35px;">Cancelar</a>
                       </div>
                     </form>
 

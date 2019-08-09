@@ -29,11 +29,11 @@
                    <div class="col-md-12" style="background: #fff;padding: 25px 0;">
 
                       <div class="round-logo" style="width: 60px;height: 60px;float: left;border-radius: 50%;">
-                        <img src="{{ $user->image }}" alt="VLT Advogados" style="border-radius: 50%;">
+                        <img src="#" alt="VLT Advogados" style="border-radius: 50%;">
                       </div>
 
                       <div class="data">
-                          <h6>Por <span style="color: #008fd5;font-weight: bold;">{{ $user->name }}</span></h6>
+                          <h6>Por <span style="color: #008fd5;font-weight: bold;">Nome</span></h6>
                           <h6>{{date('j M, Y', strtotime($post->created_at))}}</h6>
                         </div>
 

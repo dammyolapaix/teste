@@ -63,7 +63,7 @@
 
          <div class="container-fluid">
           <ul class="breadcrumb">
-            <li class="breadcrumb-item"><a href="{{ route('admin.index') }}">Home</a></li>
+            <li class="breadcrumb-item"><a href="{{ route('post.index') }}">Home</a></li>
             <li class="breadcrumb-item active">Criar novo post</li>
           </ul>
         </div>
@@ -78,7 +78,7 @@
                   <div class="title"><strong class="d-block">Criar novo post</strong></div>
                   <div class="block-body">
 
-                    <form action="{{ route('admin.store') }}" method="POST" enctype="multipart/form-data">
+                    <form action="{{ route('post.store') }}" method="POST" enctype="multipart/form-data">
 
                       @csrf
                       {{ method_field('POST') }}

@@ -26,7 +26,7 @@
         <!-- Breadcrumb-->
         <div class="container-fluid">
           <ul class="breadcrumb">
-            <li class="breadcrumb-item"><a href="{{ route('admin.index') }}">Home</a></li>
+            <li class="breadcrumb-item"><a href="{{ route('post.index') }}">Home</a></li>
             <li class="breadcrumb-item active">Pesquisa</li>
           </ul>
         </div>
@@ -66,20 +66,20 @@
                             <td style="width: 50px;"><img src="{{ $post->image }}" alt="" style="width: 80%;"></td>
 
                              <td class="button">
-                              <a href="{{route('admin.show', ['id' => $post->id])}}" style="width: 100%;">
+                              <a href="{{route('post.show', ['id' => $post->id])}}" style="width: 100%;">
                                 <button class="btn btn-primary btn-sm" style="width: 45px;padding: 5px 0;"><i class="far fa-eye" style="font-size: 18px;"></i></button>
                               </a>
                             </td>
 
                              <td class="button">
-                              <a href="{{route('admin.edit', ['id' => $post->id])}}" style="width: 100%;">
+                              <a href="{{route('post.edit', ['id' => $post->id])}}" style="width: 100%;">
                                 <button class="btn btn-warning btn-sm" style="width: 45px;padding: 5px 0;"><i class="fas fa-pencil-alt" style="font-size: 16px;color: #fff;"></i></button>
                               </a>
                             </td>
 
                             <td class="button">
                               <div>
-                                <form action="{{route('admin.delete', ['id' => $post->id])}}" method="POST" id="delete">
+                                <form action="{{route('post.delete', ['id' => $post->id])}}" method="POST" id="delete">
                                    {{ method_field('POST') }}
                                    @csrf
                                   <button type="input" class="btn btn-danger btn-sm" style="width: 45px;padding: 5px 0;" onclick="return myFunction();"><i class="fas fa-trash-alt" style="font-size: 15px;"></i>

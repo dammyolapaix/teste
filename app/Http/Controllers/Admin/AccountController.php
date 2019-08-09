@@ -12,8 +12,9 @@ use Illuminate\Support\Str;
 
 class AccountController extends Controller
 {
-
-	public function getIndex($id) {
+    // GET
+    // show user dashboard
+	public function index($id) {
 
 		$user = User::find($id);
 
@@ -21,8 +22,9 @@ class AccountController extends Controller
 
 	}
 
+    // GET
 	// Show user account info
-    public function getShow($id)
+    public function show($id)
     {
 
         $user = User::find($id);
@@ -30,8 +32,9 @@ class AccountController extends Controller
         return view('admin.account.show')->with('user',$user);
     }
 
-	 // Edit
-    public function getEdit($id)
+    // GET
+	// Edit
+    public function edit($id)
     {
         $user = User::find($id);
 
@@ -39,7 +42,9 @@ class AccountController extends Controller
         return view('admin.account.edit')->with('user',$user);
     }
 
-    public function setUpdate(Request $request, $id) {
+    // SET
+    // update
+    public function update(Request $request, $id) {
 
     	$validatedData = $request->validate([
             'name' => 'required',
@@ -69,5 +74,4 @@ class AccountController extends Controller
     }
 
 
-
-}// end class
+} // end class

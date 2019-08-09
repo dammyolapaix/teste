@@ -8,7 +8,9 @@ use App\Models\Admin\Post;
 
 class PagesController extends Controller
 {
-    public function getIndex() {
+
+    // GET: all methods below
+    public function index() {
 
         $posts = new Post;
         $posts = Post::orderBy('id','desc')->paginate(3);
@@ -16,64 +18,66 @@ class PagesController extends Controller
         return view('pages.index')->with('posts', $posts);
     }
 
-    public function getAbout() {
+    public function about() {
 
     	return view('pages/about');
 
     }
 
-     public function getContato() {
+     public function contato() {
 
         return view('pages/contato');
     }
 
-     public function getProfissionais() {
+  
+     public function profissionais() {
 
         return view('pages/profissionais');
     }
 
-    public function getDireitoBancario() {
+    public function direitoBancario() {
 
         return view('pages/direito_bancario');
     }
 
-    public function getDireitoCivil() {
+    public function direitoCivil() {
 
         return view('pages/direito_civil');
     }
 
-     public function getDireitoCriminal() {
+     public function direitoCriminal() {
 
         return view('pages/direito_criminal');
     }
 
-     public function getDireitoFamilia() {
+     public function direitoFamilia() {
 
         return view('pages/direito_familia');
     }
 
-      public function getDireitoImobiliario() {
+      public function direitoImobiliario() {
 
         return view('pages/direito_imobiliario');
     }
 
-      public function getDireitoMedico() {
+      public function direitoMedico() {
 
         return view('pages/direito_medico');
     }
 
-     public function getDireitoPrevidenciario() {
+     public function direitoPrevidenciario() {
 
         return view('pages/direito_previdenciario');
     }
 
-     public function getDireitoTrabalhista() {
+     public function direitoTrabalhista() {
 
         return view('pages/direito_trabalhista');
     }
 
-     public function getDireitoTributario() {
+     public function direitoTributario() {
 
         return view('pages/direito_tributario');
     }
-}
+    
+} // end class

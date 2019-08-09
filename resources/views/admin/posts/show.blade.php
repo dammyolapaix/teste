@@ -47,12 +47,12 @@
 
             <div class="row">
               <div class="col-sm-4">  
-                <a href="{{route('admin.edit', ['id' => $post->id])}}" class="btn btn-warning btn-sm"
+                <a href="{{route('post.edit', ['id' => $post->id])}}" class="btn btn-warning btn-sm"
                   style="width: 60px;padding: 7px 0;">Editar</a>
               </div>
 
               <div class="col-sm-4">
-                <form action="{{route('admin.delete', ['id' => $post->id])}}" method="POST" id="delete">
+                <form action="{{route('post.delete', ['id' => $post->id])}}" method="POST" id="delete">
                    {{ method_field('POST') }}
                    @csrf
                   <input type="submit" value="Deletar" class="btn btn-primary btn-sm" onclick="return myFunction();" style="width: 60px;padding: 7px 0;" />
@@ -60,7 +60,7 @@
               </div>
 
               <div class="col-sm-4">  
-                <a href="{{ route('admin.index') }}" class="btn btn-light btn-sm" style="width: 60px;padding: 7px 0;">Voltar</a>
+                <a href="{{ route('post.index') }}" class="btn btn-light btn-sm" style="width: 60px;padding: 7px 0;">Voltar</a>
               </div>
             </div>
           </div>

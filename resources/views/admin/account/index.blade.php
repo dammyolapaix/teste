@@ -32,7 +32,7 @@
         <!-- Breadcrumb-->
         <div class="container-fluid">
           <ul class="breadcrumb">
-            <li class="breadcrumb-item"><a href="{{ route('admin.index') }}">Home</a></li>
+            <li class="breadcrumb-item"><a href="{{ route('post.index') }}">Home</a></li>
             <li class="breadcrumb-item active">Meu Perfil</li>
           </ul>
         </div>

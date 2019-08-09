@@ -30,7 +30,7 @@
             <div class="close-btn">Fechar <i class="fas fa-times"></i></div>
 
            <!--  // Search form -->
-            <form id="searchForm" action="{{ route('admin.search02') }}">
+            <form id="searchForm" action="{{ route('post.search02') }}">
               <div class="form-group">
                 <input type="search" name="search" placeholder="Digite o que você está procurando...">
                 <button type="submit" class="submit">Buscar</button>

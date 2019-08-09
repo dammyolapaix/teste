@@ -10,7 +10,7 @@
 
          <div class="container-fluid">
           <ul class="breadcrumb">
-            <li class="breadcrumb-item"><a href="{{ route('admin.index') }}">Home</a></li>
+            <li class="breadcrumb-item"><a href="{{ route('post.index') }}">Home</a></li>
             <li class="breadcrumb-item active">Editar o Perfil</li>
           </ul>
         </div>
@@ -49,7 +49,7 @@
 
                       <div class="form-group">       
                         <input type="submit" value="Salvar" class="btn btn-primary" />
-                        <a href="#" class="btn btn-primary" style="margin-left: 1%;">Cancelar</a>
+                        <a href="{{ route('user.index',['id' => $user->id]) }}" class="btn btn-primary" style="margin-left: 1%;">Cancelar</a>
                       </div>
                     </form>
 

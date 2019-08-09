@@ -19,20 +19,20 @@ Route::group(['middleware' => ['web']], function() {
 
 	// -----  Site navigation routes ----- //
 
-	Route::get('/', 'Pages\PagesController@getIndex')->name('index');
-	Route::get('/about', 'Pages\PagesController@getAbout')->name('about');
-	Route::get('/profissionais', 'Pages\PagesController@getProfissionais')->name('profissionais');
-	Route::get('/direito_bancario', 'Pages\PagesController@getDireitoBancario')->name('direitobancario');
-	Route::get('/direito_civil', 'Pages\PagesController@getDireitoCivil')->name('direitocivil');
-	Route::get('/direito_criminal', 'Pages\PagesController@getDireitoCriminal')->name('direitocriminal');
-	Route::get('/direito_familia', 'Pages\PagesController@getDireitoFamilia')->name('direitofamilia');
-	Route::get('/direito_imobiliario', 'Pages\PagesController@getDireitoImobiliario')->name('direitoimobiliario');
-	Route::get('/direito_medico', 'Pages\PagesController@getDireitoMedico')->name('direitomedico');
-	Route::get('/direito_previdenciario', 'Pages\PagesController@getDireitoPrevidenciario')->name('direitoprevidenciario');
-	Route::get('/direito_trabalhista', 'Pages\PagesController@getDireitoTrabalhista')->name('direitotrabalhista');
-	Route::get('/direito_tributario', 'Pages\PagesController@getDireitoTributario')->name('direitotributario');
+	Route::get('/', 'Pages\PagesController@index')->name('index');
+	Route::get('/about', 'Pages\PagesController@about')->name('about');
+	Route::get('/profissionais', 'Pages\PagesController@profissionais')->name('profissionais');
+	Route::get('/direito_bancario', 'Pages\PagesController@direitoBancario')->name('direitobancario');
+	Route::get('/direito_civil', 'Pages\PagesController@direitoCivil')->name('direitocivil');
+	Route::get('/direito_criminal', 'Pages\PagesController@direitoCriminal')->name('direitocriminal');
+	Route::get('/direito_familia', 'Pages\PagesController@direitoFamilia')->name('direitofamilia');
+	Route::get('/direito_imobiliario', 'Pages\PagesController@direitoImobiliario')->name('direitoimobiliario');
+	Route::get('/direito_medico', 'Pages\PagesController@direitoMedico')->name('direitomedico');
+	Route::get('/direito_previdenciario', 'Pages\PagesController@direitoPrevidenciario')->name('direitoprevidenciario');
+	Route::get('/direito_trabalhista', 'Pages\PagesController@direitoTrabalhista')->name('direitotrabalhista');
+	Route::get('/direito_tributario', 'Pages\PagesController@direitoTributario')->name('direitotributario');
 
-	Route::get('/contato', 'Pages\PagesController@getContato')->name('contato');
+	Route::get('/contato', 'Pages\PagesController@contato')->name('contato');
 
 	// ** Send form routes
 
@@ -40,66 +40,64 @@ Route::group(['middleware' => ['web']], function() {
 
 	// -----  Blog routes (all posts e single) ----- //
 
-	Route::get('/posts', 'Blog\BlogController@getIndex')->name('blog.index');
-	Route::get('/single/{slug}', 'Blog\BlogController@getSingle')->name('blog.single');
-	Route::get('/blog/search', 'Blog\BlogController@getSearch')->name('blog.search');
+	Route::get('/posts', 'Blog\BlogController@index')->name('blog.index');
+	Route::get('/single/{slug}', 'Blog\BlogController@single')->name('blog.single');
+	Route::get('/blog/search', 'Blog\BlogController@search')->name('blog.search');
 
 
 //////////////////////////////////////////
 
-	// -----  Admin routes ----- //
+	// ----- Dashboard routes ----- //
 
 	// --- Posts---
 	// create
-	Route::get('/admin/create', 'Admin\PostsController@getCreate')->name('admin.create');
-	Route::post('/admin/create', 'Admin\PostsController@setStore')->name('admin.store');
-	// read all posts
-	Route::get('/home', 'Admin\PostsController@getIndex')->name('admin.index');
+	Route::get('/dashboard/create', 'Admin\PostsController@create')->name('post.create');
+	Route::post('/dashboard/create', 'Admin\PostsController@store')->name('post.store');
 	// show post info
-	Route::get('/admin/show/{id}', 'Admin\PostsController@getShow')->name('admin.show');
+	Route::get('/dashboard/show/{id}', 'Admin\PostsController@show')->name('post.show');
 	// edit
-	Route::get('/admin/edit/{id}', 'Admin\PostsController@getEdit')->name('admin.edit');
-	Route::post('/admin/edit/{id}', 'Admin\PostsController@setUpdate')->name('admin.update');
+	Route::get('/dashboard/edit/{id}', 'Admin\PostsController@edit')->name('post.edit');
+	Route::post('/dashboard/edit/{id}', 'Admin\PostsController@update')->name('post.update');
 	// delete
-	Route::post('/admin/delete/{id}', 'Admin\PostsController@setDestroy')->name('admin.delete');
+	Route::post('/dashboard/delete/{id}', 'Admin\PostsController@destroy')->name('post.delete');
 	// search posts by tags
-	Route::get('/admin/search', 'Admin\SearchController@getSearch')->name('admin.search');
+	Route::get('/dashboard/search', 'Admin\SearchController@search')->name('post.search');
 	// search by keywords
-	Route::get('/admin/search02', 'Admin\SearchController@getSearch02')->name('admin.search02');
+	Route::get('/dashboard/search02', 'Admin\SearchController@search02')->name('post.search02');
 
 	// --- User ---
 	// read user account
-	Route::get('/admin/{id}/account', 'Admin\AccountController@getIndex')->name('user.index');
+	Route::get('/author/{id}/account', 'Admin\AccountController@index')->name('user.index');
 	// show user account info
-	Route::get('/admin/{id}/show', 'Admin\AccountController@getShow')->name('user.show');
+	Route::get('/author/{id}/show', 'Admin\AccountController@show')->name('user.show');
 	// edit user account
-	Route::get('/admin/{id}/edit', 'Admin\AccountController@getEdit')->name('user.edit');
-	Route::post('/admin/{id}/edit', 'Admin\AccountController@setUpdate')->name('user.update');
+	Route::get('/author/{id}/edit', 'Admin\AccountController@edit')->name('user.edit');
+	Route::post('/author/{id}/edit', 'Admin\AccountController@update')->name('user.update');
 
 	// --- Users Permissions---
 	/// Create user permission
 	Route::get('/create', function () {
 
-		$user = User::find(2);
+		// $user = User::find(2);
 
-		$role = new Role;
-		$role->name = "Autor";
+		// $role = new Role;
+		// $role->name = "Autor";
 
-		$user->roles()->save($role);
+		// $user->roles()->save($role);
 
-    	return "Permissão para o usuário criada com sucesso!";
+  //   	return "Permissão para o usuário criada com sucesso!";
 
 	});
 
 	// Read user permission
 	Route::get('/read', function () {
 
-		$user = User::findOrFail(2);
+		// $user = User::findOrFail(2);
 
-	    foreach ($user->roles as $role) {
+	 //    foreach ($user->roles as $role) {
 	    	
-	    	echo "O usuário " .$user->name. " tem permissão de: ".$role->name."<br />";
-	    }
+	 //    	echo "O usuário " .$user->name. " tem permissão de: ".$role->name."<br />";
+	 //    }
 	});
 
 	
@@ -107,10 +105,10 @@ Route::group(['middleware' => ['web']], function() {
 
 
 // Authentication routes
-Route::get('/admin', 'HomeController@getIndex')->name('admin.index')->middleware('auth');
+Route::get('/dashboard', 'HomeController@index')->name('post.index')->middleware('auth');
 Route::get('/home', function() {
 	return redirect('/');
 });
 
-Route::get('/login', 'HomeController@getLogin')->name('login');
+Route::get('/login', 'HomeController@login')->name('login');
 Auth::routes();

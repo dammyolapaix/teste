@@ -18,14 +18,17 @@ class PostsController extends Controller
     // Show all posts
     // Essa funçao está no HomeController
 
-   // Create
-    public function getCreate()
+    // GET
+    // Create a new post
+    public function create()
     {   
 
         return view('admin.posts.create');
     }
 
-    public function setStore(ValidateStorePost $request)
+    // SET
+    // Create a new post
+    public function store(ValidateStorePost $request)
     {
         // finding the user
         $user = Auth::user();
@@ -53,9 +56,10 @@ class PostsController extends Controller
         return redirect()->route('admin.show', $post->id);    
 
    }
- 
+
+    // GET
     // Show one single post by ID
-    public function getShow($id)
+    public function show($id)
     {
 
         $post = Post::find($id);
@@ -64,8 +68,9 @@ class PostsController extends Controller
         return view('admin.posts.show')->with('post',$post);
     }
 
+    // GET
     // Edit
-    public function getEdit($id)
+    public function edit($id)
     {
         $post = Post::find($id);
 
@@ -73,7 +78,9 @@ class PostsController extends Controller
         return view('admin.posts.edit')->with('post',$post);
     }
   
-    public function setUpdate(Request $request, $id)
+    // SET
+    // Edit
+    public function update(Request $request, $id)
     {
 
          $validatedData = $request->validate([
@@ -109,8 +116,9 @@ class PostsController extends Controller
          
     }
 
+    // SET
     // Delete  
-    public function setDestroy($id)
+    public function destroy($id)
     {
         $post = Post::find($id);
 

@@ -11,9 +11,10 @@ use Illuminate\Support\Str;
 
 class SearchController extends Controller
 {
-    // Retrieving posts by category
 
-	public function getSearch(Request $request) {
+	// GET
+    // Retrieving posts by category
+	public function search(Request $request) {
 
 		$post = $request->id;
 
@@ -75,9 +76,9 @@ class SearchController extends Controller
 			
 	} // end function getSearch
 
-
+	// GET
 	// search by keywords
-	public function getSearch02(Request $request) {
+	public function search02(Request $request) {
 
 		$post = new Post;
 

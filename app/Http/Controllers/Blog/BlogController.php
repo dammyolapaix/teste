@@ -11,34 +11,36 @@ use Illuminate\Support\Facades\Auth;
 class BlogController extends Controller
 {
 
-	// Show all posts with pagination
-     public function getIndex() {
+	// GET
+    // Show all posts with pagination
+     public function index() {
 
-        // $posts = Post::orderBy('id','desc')->paginate(6);
-        $posts = Post::with('author')->get();
+        $posts = Post::orderBy('id','desc')->paginate(6);
+        // $posts = Post::with('author')->get();
 
-        dd($posts);
+        // dd($posts);
         
-        // return view('blog.index', compact('posts'));
+        return view('blog.index', compact('posts'));
 
 
     }
 
-    // Show post single
-     public function getSingle($slug) {
+    // GET
+    // Show one single post
+     public function single($slug) {
 
         $posts = Post::orderBy('id','desc')->paginate(3);
         $post = Post::where('slug', $slug)->first(); 
 
-        $user = $post->author; 
 
-        return view('blog.single', compact('post', 'posts','user'));
+        return view('blog.single', compact('post', 'posts'));
     }
 
 
+    // GET 
     // Retrieving posts by category
 
-    public function getSearch(Request $request) {
+    public function search(Request $request) {
 
         $post = $request->id;
 
@@ -98,8 +100,7 @@ class BlogController extends Controller
             return view('blog.search', ['posts' => $posts]);
         }
             
-    } // end function getSearch
-
+    } // end function search
 
 
 } // end class
