@@ -15,13 +15,15 @@ class BlogController extends Controller
     // Show all posts with pagination
      public function index() {
 
-        $posts = Post::orderBy('id','desc')->paginate(6);
-        // $posts = Post::with('author')->get();
+        // $posts = Post::orderBy('id','desc')->paginate(6);
+        $posts = Post::with('author')->get();
 
         // dd($posts);
-        
-        return view('blog.index', compact('posts'));
 
+        foreach ($posts as $post) {
+            
+            return view('blog.index', compact('posts'));
+        }
 
     }
 

@@ -29,11 +29,11 @@
                    <div class="col-md-12" style="background: #fff;padding: 25px 0;">
 
                       <div class="round-logo" style="width: 60px;height: 60px;float: left;border-radius: 50%;">
-                        <img src="#" alt="VLT Advogados" style="border-radius: 50%;">
+                        <img src="{{ $post->author->image }}" alt="VLT Advogados" style="border-radius: 50%;">
                       </div>
 
                       <div class="data">
-                          <h6>Por <span style="color: #008fd5;font-weight: bold;">Nome</span></h6>
+                          <h6>Por <span style="color: #008fd5;font-weight: bold;">{{ $post->author->name }}</span></h6>
                           <h6>{{date('j M, Y', strtotime($post->created_at))}}</h6>
                         </div>
 
@@ -63,6 +63,7 @@
 
               <div class="clear"></div>
 
+              <!-- Posts Recentes -->
               <div class="container-leia-mais" style="background:#f9f9f9;width: 100%;">
                 <h2 style="color: #171717;">Posts Recentes</h2>
                 <div class="row">
@@ -70,7 +71,7 @@
                         <div class="col-md-4">
                           <div class="card" style="border-top: 10px solid #f5a623;min-height: 480px;max-height: 480px;">
                             <div class="image-wrapper" style="width: 100%;height: 200px;overflow: hidden;">
-                                  <img src="{{ $post->image }}" alt="VLT Advogados" style="width: 100%;height: 100%;">
+                                  <a href="{{route('blog.single', ['slug' => $post->slug])}}"><img src="{{ $post->image }}" alt="VLT Advogados" style="width: 100%;height: 100%;"></a>
                              </div>
 
                              <div class="card-body">

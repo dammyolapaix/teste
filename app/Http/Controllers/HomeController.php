@@ -19,7 +19,7 @@ class HomeController extends Controller
     }
 
     // GET
-    // Show all author's posts in dashboard
+    // Show all posts in dashboard (of a logged user)
     public function index()
     {   
         $user = Auth::user();
@@ -29,10 +29,11 @@ class HomeController extends Controller
     }
 
     // GET
-    // Show de login page
+    // Show the login page
     public function login()
     {   
         return view('auth.login');
     }
+    
 
 } // end class
