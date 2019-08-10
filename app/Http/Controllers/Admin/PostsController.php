@@ -53,7 +53,7 @@ class PostsController extends Controller
         $user->posts()->save($post);
 
         Session::flash('success',' O post foi salvo com sucesso!');
-        return redirect()->route('admin.show', $post->id);    
+        return redirect()->route('post.show', $post->id);    
 
    }
 
@@ -112,7 +112,7 @@ class PostsController extends Controller
         $post->save();
 
         Session::flash('success',' O post foi atualizado com sucesso!');
-        return redirect()->route('admin.show', $post->id);
+        return redirect()->route('post.show', $post->id);
          
     }
 

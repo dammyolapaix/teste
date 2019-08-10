@@ -4,19 +4,18 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateRoleUserTable extends Migration
+class CreateCategoriesTable extends Migration
 {
     /**
-     * PIVOT TABLE
+     * Run the migrations.
      *
      * @return void
      */
     public function up()
     {
-        Schema::create('role_user', function (Blueprint $table) {
+        Schema::create('categories', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('user_id')->unsigned()->nullable();
-            $table->integer('role_id')->unsigned()->nullable();
+            $table->string('name');
             $table->timestamps();
         });
     }
@@ -28,6 +27,6 @@ class CreateRoleUserTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('role_user');
+        Schema::dropIfExists('categories');
     }
 }

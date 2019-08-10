@@ -37,12 +37,13 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-
+    // Many to Many
     public function roles() {
 
         return $this->belongsToMany('App\Models\User\Role');
     }
 
+    // One to Many
     public function posts() {
 
         return $this->hasMany('App\Models\Admin\Post' , 'user_id' , 'id'); 

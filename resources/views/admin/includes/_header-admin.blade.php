@@ -56,13 +56,10 @@
                   </div>
                   <div class="content">   <strong class="d-block">VLT Advogados</strong><span class="d-block">Bem-vindo ao seu sistema. Poste algo incrível!</span><small class="date d-block">Admin</small></div></a><a href="#" class="dropdown-item message d-flex align-items-center">
 
-                   
-
                   </a><a href="#" class="dropdown-item text-center message"> <strong>Logout <i class="fa fa-angle-right"></i></strong></a></div>
             </div>
 
             <!-- Log out -->
-
             <div class="list-inline-item logout"> 
 
               <div>
@@ -72,6 +69,7 @@
                       @csrf
                 </form>
             </div>
+
           </div>
         </div>
       </nav>

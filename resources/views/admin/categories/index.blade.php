@@ -9,6 +9,7 @@
       <style type="text/css">
           
           td.button {
+            width: 50px;
             padding: 12px 5px 10px;
           }
 
@@ -33,7 +34,7 @@
         <div class="container-fluid">
           <ul class="breadcrumb">
             <li class="breadcrumb-item"><a href="{{ route('post.index') }}">Home</a></li>
-            <li class="breadcrumb-item active">Posts</li>
+            <li class="breadcrumb-item active">Categorias</li>
           </ul>
         </div>
 
@@ -44,57 +45,50 @@
               <div class="col-lg-12">
                 <div class="block margin-bottom-sm">
                   <div class="top-table" style="display: flex;justify-content: space-between;">
-                    <div class="title"><strong>Meus Posts</strong></div>
-                    <a href="{{ route('post.create')}}"><button class="btn btn-success"><i class="fas fa-plus-circle" style="margin-right: 5px;"></i>Novo</button></a>
+                    <div class="title"><strong>Todas as Categorias</strong></div>
+                    <a href="#"><button class="btn btn-success"><i class="fas fa-plus-circle" style="margin-right: 5px;"></i>Novo</button></a>
                   </div>
                   <div class="table-responsive"> 
                     <table class="table">
                       <thead>
                         <tr>
                           <!-- <th>Id</th> -->
-                          <th>Título</th>
-                          <th>Texto</th>
-                          <th>Categoria</th>
-                          <th>Imagem</th>
-                          <th>Autor</th>
+                          <th>Nome da categoria</th>
+                          <th></th>
+                          <th></th>
+                          <th></th>
+                          <th></th>
                           <th colspan="3">Ações</th>
                         </tr>
                       </thead>
 
                       <tbody>
                         
-                        @foreach($posts as $post)
+                        @foreach($categories as $category)
 
                           <tr>
-                            <!-- <th scope="row">{{$post->id}}</th> -->
-                            <td style="padding: 10px;">{{ substr($post->title, 0, 50) }}{{ strlen($post->title) > 50 ? " ..." : "" }}</td>
-                            
-                            <td style="padding: 10px 7px;">
-                              {{substr(strip_tags($post->body), 0, 40) . '...'}}
-                            
-                            </td>
+                            <td style="padding: 10px;">{{ $category->name }}</td>
 
-                            <td style="padding: 10px;">{{$post->category}}</td>
-
-                            <td style="width: 50px;"><img src="{{ $post->image }}" alt="" style="width: 100%;"></td>
-
-                             <td style="width: 50px;"><img src="{{ $post->author->image }}" alt="" style="width: 100%;"></td>
+                            <td style="width: 50px;"></td>
+                            <td style="width: 50px;"></td>
+                            <td style="width: 50px;"></td>
+                            <td style="width: 50px;"></td>
 
                             <td class="button">
-                              <a href="{{route('post.show', ['id' => $post->id])}}" style="width: 100%;">
+                              <a href="#" style="width: 100%;">
                                 <button class="btn btn-primary btn-sm" style="width: 45px;padding: 5px 0;"><i class="far fa-eye" style="font-size: 18px;"></i></button>
                               </a>
                             </td>
 
                             <td class="button">
-                              <a href="{{route('post.edit', ['id' => $post->id])}}" style="width: 100%;">
+                              <a href="#" style="width: 100%;">
                                 <button class="btn btn-warning btn-sm" style="width: 45px;padding: 5px 0;"><i class="fas fa-pencil-alt" style="font-size: 16px;color: #fff;"></i></button>
                               </a>
                             </td>
 
                             <td class="button">
                               <div>
-                                <form action="{{route('post.delete', ['id' => $post->id])}}" method="POST" id="delete">
+                                <form action="#" method="POST" id="delete">
                                    {{ method_field('POST') }}
                                    @csrf
                                   <button type="input" class="btn btn-danger btn-sm" style="width: 45px;padding: 5px 0;" onclick="return myFunction();"><i class="fas fa-trash-alt" style="font-size: 15px;"></i>
@@ -113,9 +107,7 @@
 
                   </div>
                   
-                </div>
-
-                 {{ $posts->links() }}
+                </div>      
 
               </div>
 
@@ -126,7 +118,7 @@
         <script type="text/javascript">
 
           function myFunction() {
-              if (confirm("Deseja realmente deletar esse post?")) {
+              if (confirm("Deseja realmente deletar essa categoria?")) {
                  return true;
               } else {
                 return false;

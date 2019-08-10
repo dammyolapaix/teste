@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Admin\Post;
+use App\Models\User\Role;
 use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
@@ -19,13 +20,24 @@ class HomeController extends Controller
     }
 
     // GET
-    // Show all posts in dashboard (of a logged user)
+    // Show all posts in dashboard (of the logged user)
     public function index()
     {   
         $user = Auth::user();
 
-        $posts = Post::orderBy('id','desc')->paginate(5);
-        return view('admin.posts.index')->with('posts',$posts)->with('user',$user);
+        foreach ($user->roles as $role) {
+            
+           if ($role->name == 'Admin') {
+               
+                $posts = Post::with('author')->paginate(6);
+           }
+           else {
+
+                $posts = Post::where('user_id', Auth::user()->id)->paginate(6);
+           }
+
+             return view('admin.posts.index')->with('posts',$posts);
+        }
     }
 
     // GET

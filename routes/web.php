@@ -50,20 +50,24 @@ Route::group(['middleware' => ['web']], function() {
 	// ----- Dashboard routes ----- //
 
 	// --- Posts---
-	// create
+	// Create
 	Route::get('/dashboard/create', 'Admin\PostsController@create')->name('post.create');
 	Route::post('/dashboard/create', 'Admin\PostsController@store')->name('post.store');
-	// show post info
+	// Show post info
 	Route::get('/dashboard/show/{id}', 'Admin\PostsController@show')->name('post.show');
-	// edit
+	// Edit
 	Route::get('/dashboard/edit/{id}', 'Admin\PostsController@edit')->name('post.edit');
 	Route::post('/dashboard/edit/{id}', 'Admin\PostsController@update')->name('post.update');
-	// delete
+	// Delete
 	Route::post('/dashboard/delete/{id}', 'Admin\PostsController@destroy')->name('post.delete');
-	// search posts by tags
+	// Search posts by tags
 	Route::get('/dashboard/search', 'Admin\SearchController@search')->name('post.search');
-	// search by keywords
+	// Search by keywords
 	Route::get('/dashboard/search02', 'Admin\SearchController@search02')->name('post.search02');
+
+	// --- Categorias---
+	// Read all
+	Route::get('/dashboard/categoria', 'Admin\CategoryController@index')->name('categoria.index');
 
 	// --- User ---
 	// read user account
@@ -81,11 +85,11 @@ Route::group(['middleware' => ['web']], function() {
 		// $user = User::find(2);
 
 		// $role = new Role;
-		// $role->name = "Autor";
+		// $role->name = "Author";
 
 		// $user->roles()->save($role);
 
-  //   	return "Permissão para o usuário criada com sucesso!";
+  //   	return "Permissão criada com sucesso!";
 
 	});
 

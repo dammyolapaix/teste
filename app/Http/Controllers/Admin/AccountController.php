@@ -70,7 +70,7 @@ class AccountController extends Controller
         $user->save();
 
         Session::flash('success',' Perfil atualizado com sucesso!');
-        return redirect()->route('admin.index');
+        return redirect()->route('post.index');
     }
 
 

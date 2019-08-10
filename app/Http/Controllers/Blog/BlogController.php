@@ -16,9 +16,8 @@ class BlogController extends Controller
      public function index() {
 
         // $posts = Post::orderBy('id','desc')->paginate(6);
-        $posts = Post::with('author')->get();
-
-        // dd($posts);
+        // $posts = Post::with('author')->get();
+         $posts = Post::with('author')->paginate(6);
 
         foreach ($posts as $post) {
             
