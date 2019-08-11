@@ -46,7 +46,7 @@
                 <div class="block margin-bottom-sm">
                   <div class="top-table" style="display: flex;justify-content: space-between;">
                     <div class="title"><strong>Todas as Categorias</strong></div>
-                    <a href="#"><button class="btn btn-success"><i class="fas fa-plus-circle" style="margin-right: 5px;"></i>Novo</button></a>
+                    <a href="{{ route('categoria.create') }}"><button class="btn btn-success"><i class="fas fa-plus-circle" style="margin-right: 5px;"></i>Novo</button></a>
                   </div>
                   <div class="table-responsive"> 
                     <table class="table">
@@ -81,7 +81,7 @@
                             </td>
 
                             <td class="button">
-                              <a href="#" style="width: 100%;">
+                              <a href="{{route('categoria.edit', ['id' => $category->id])}}" style="width: 100%;">
                                 <button class="btn btn-warning btn-sm" style="width: 45px;padding: 5px 0;"><i class="fas fa-pencil-alt" style="font-size: 16px;color: #fff;"></i></button>
                               </a>
                             </td>

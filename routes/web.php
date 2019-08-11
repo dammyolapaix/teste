@@ -47,9 +47,9 @@ Route::group(['middleware' => ['web']], function() {
 
 //////////////////////////////////////////
 
-	// ----- Dashboard routes ----- //
+	// ----- DASHBOARD ROUTES ----- //
 
-	// --- Posts---
+	// --- POSTS ---
 	// Create
 	Route::get('/dashboard/create', 'Admin\PostsController@create')->name('post.create');
 	Route::post('/dashboard/create', 'Admin\PostsController@store')->name('post.store');
@@ -65,9 +65,15 @@ Route::group(['middleware' => ['web']], function() {
 	// Search by keywords
 	Route::get('/dashboard/search02', 'Admin\SearchController@search02')->name('post.search02');
 
-	// --- Categorias---
+	// --- CATEGORIAS---
 	// Read all
 	Route::get('/dashboard/categoria', 'Admin\CategoryController@index')->name('categoria.index');
+	// Create 
+	Route::get('/dashboard/categoria/create', 'Admin\CategoryController@create')->name('categoria.create');
+	Route::post('/dashboard/categoria/create', 'Admin\CategoryController@store')->name('categoria.store');
+	// Edit
+	Route::get('/dashboard/categoria/edit/{id}', 'Admin\CategoryController@edit')->name('categoria.edit');
+	Route::post('/dashboard/categoria/edit/{id}', 'Admin\CategoryController@update')->name('categoria.update');
 
 	// --- User ---
 	// read user account

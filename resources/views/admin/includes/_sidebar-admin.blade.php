@@ -26,14 +26,14 @@
               <li class="{{ Request::is('dashboard/create') ? 'active' : '' }}">
                 <a href="{{ route('post.create') }}"><i class="fas fa-file"></i>Novo post</a>
               </li>
-              <li class="{{ Request::is('dashboard/categoria') ? 'active' : '' }}">
+              <li class="{{ Request::is('dashboard/categoria') || Request::is('dashboard/categoria/create') ? 'active' : '' }}">
                 <a href="#exampledropdownDropdown" aria-expanded="false" data-toggle="collapse"><i class="fas fa-window-restore"></i>Categorias
                 </a>
                   <ul id="exampledropdownDropdown" class="collapse list-unstyled ">
                      <li>
                         <a href="{{ route('categoria.index') }}">Listar categorias</a>
                      </li>
-                     <li><a href="#">Criar nova categoria</a></li>
+                     <li><a href="{{ route('categoria.create') }}">Criar nova categoria</a></li>
                     <!-- <li><a href="{{ route('post.search', ['id'=>2]) }}">Atualidades</a></li>
                     <li><a href="{{ route('post.search', ['id'=>3]) }}">Direito Bancário</a></li>
                     <li><a href="{{ route('post.search', ['id'=>4]) }}">Direito Civil</a></li>

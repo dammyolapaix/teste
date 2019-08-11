@@ -5,6 +5,10 @@ namespace App\Http\Requests;
 use Illuminate\Foundation\Http\FormRequest;
 use App\Models\Admin\Post;
 
+
+// php artisan make:request ValidateStorePost
+// put in store and update methods: (ValidateStorePost $request)
+
 class ValidateStorePost extends FormRequest
 {
     

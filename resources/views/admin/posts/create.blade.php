@@ -126,7 +126,8 @@
                       </div>
 
                       <div class="form-group">       
-                        <input type="submit" value="Postar" class="btn btn-primary" style="width: 100px;height: 50px;" />
+                        <input type="submit" value="Salvar" class="btn btn-primary" style="width: 90px;padding: 10px 0;" />
+                        <a href="{{ route('post.index') }}" class="btn btn-light" style="width: 90px;padding: 10px 0;">Cancelar</a>
                       </div>
                     </form>
 
