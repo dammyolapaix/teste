@@ -102,18 +102,10 @@
                       <div class="form-group">       
                         <label class="form-control-label">Categoria</label>
                         <div class="col-sm-8" style="padding-left: 0;">
-                          <select name="category" class="form-control mb-3 mb-3">
-                            <option selected="true" value="0" disabled="">Selecione uma categoria</option>
-                            <option value="Atualidades">Atualidades</option>
-                            <option value="Direito Bancário">Direito Bancário</option>
-                            <option value="Direito Civil">Direito Civil</option>
-                            <option value="Direito Criminal">Direito Criminal</option>
-                            <option value="Direito Família">Direito de Família</option>
-                            <option value="Direito Imobiliário">Direito Imobiliário</option>
-                            <option value="Direito Médico">Direito Médico</option>
-                            <option value="Direito Previdenciário">Direito Previdenciário</option>
-                            <option value="Direito Trabalhista">Direito Trabalhista</option>
-                            <option value="Direito Tributário">Direito Tributário</option>
+                          <select class="selectpicker" multiple data-live-search="true">
+                            <option>Mustard</option>
+                            <option>Ketchup</option>
+                            <option>Relish</option>
                           </select>
                         </div>
                       </div>
@@ -165,6 +157,8 @@
         } );
     </script>
 
+
+    
 
   @endsection
 

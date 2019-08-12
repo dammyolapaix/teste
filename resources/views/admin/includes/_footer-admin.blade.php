@@ -22,6 +22,8 @@
     <script src="{{ asset('js/front.js') }}"></script>
     <script src="{{ asset('js/ckeditor.js') }}"></script>
 
+  
+
     @yield('scripts')
 
   </body>

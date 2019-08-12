@@ -88,7 +88,7 @@
 
                             <td class="button">
                               <div>
-                                <form action="#" method="POST" id="delete">
+                                <form action="{{route('categoria.delete', ['id' => $category->id])}}" method="POST" id="delete">
                                    {{ method_field('POST') }}
                                    @csrf
                                   <button type="input" class="btn btn-danger btn-sm" style="width: 45px;padding: 5px 0;" onclick="return myFunction();"><i class="fas fa-trash-alt" style="font-size: 15px;"></i>

@@ -74,6 +74,8 @@ Route::group(['middleware' => ['web']], function() {
 	// Edit
 	Route::get('/dashboard/categoria/edit/{id}', 'Admin\CategoryController@edit')->name('categoria.edit');
 	Route::post('/dashboard/categoria/edit/{id}', 'Admin\CategoryController@update')->name('categoria.update');
+	// Delete
+	Route::post('/dashboard/categoria/delete/{id}', 'Admin\CategoryController@destroy')->name('categoria.delete');
 
 	// --- User ---
 	// read user account

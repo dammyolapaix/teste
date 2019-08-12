@@ -85,7 +85,7 @@
 
                       <div class="form-group">
                         <label class="form-control-label">Nome da categoria</label>
-                        <input type="text" placeholder="Ex: Direito Bancário" class="form-control" name="name" value="{{ old('title') }}" />
+                        <input type="text" placeholder="Ex: direito bancário" class="form-control" name="name" value="{{ old('title') }}" />
                       </div>
 
                       <div class="form-group">       

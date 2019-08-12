@@ -36,7 +36,6 @@ class CategoryController extends Controller
     public function store(ValidateStoreCategory $request)
     {
       
-        // instanciando o model Category
         $category = new Category();
 
         $category->name = $request->name;
@@ -63,10 +62,6 @@ class CategoryController extends Controller
     public function update(ValidateStoreCategory $request, $id)
     {
 
-        //  $validatedData = $request->validate([
-        //     'name' => 'required',
-        // ]);
-
         $category = Category::find($id);
 
         $category->name = $request->input('name');
@@ -77,6 +72,21 @@ class CategoryController extends Controller
         Session::flash('success',' A categoria foi atualizada com sucesso!');
         return redirect()->route('categoria.index');   
          
+    }
+
+     // SET
+    // Delete  
+    public function destroy($id)
+    {
+        $category = Category::find($id);
+
+        $category->delete();
+
+         // Show message
+         Session::flash('success',' A categoria foi deletada com sucesso!');
+
+        // Redirect to view
+         return redirect()->route('categoria.index');
     }
 
 
