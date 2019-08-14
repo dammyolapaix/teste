@@ -19,7 +19,9 @@
               </div>
             </div><!-- end container -->
 
-            @include('pages/includes/_galeria')
+            <div class="galeria">
+              @include('pages/includes/_galeria')
+            </div>
 
           </section><!-- end sobre -->
 

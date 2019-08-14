@@ -52,7 +52,6 @@
                     <table class="table">
                       <thead>
                         <tr>
-                          <!-- <th>Id</th> -->
                           <th>Nome da categoria</th>
                           <th></th>
                           <th></th>

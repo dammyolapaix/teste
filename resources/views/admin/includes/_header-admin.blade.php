@@ -10,20 +10,23 @@
     <meta name="robots" content="all,follow" />
     
     <!-- Bootstrap CSS-->
-    <link rel="stylesheet" href="{{ asset('assets/darkadmin/vendor/bootstrap/css/bootstrap.min.css') }}" />
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/css/bootstrap-select.css" />
-  
+    <link rel="stylesheet" href="{{ asset('assets/darkadmin/vendor/bootstrap/css/bootstrap.min.css') }}" />  
+
+    <!-- Multi select -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.8/css/select2.min.css" rel="stylesheet" />
+    <!-- <link rel="stylesheet" href="{{ asset('css/bootstrap-multiselect.css') }}" type="text/css" /> -->
+    
     <!-- CSS--> 
     <link rel="stylesheet" href="{{ asset('css/font.css') }}" />
     <!-- Google fonts - Muli-->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Muli:300,400,700">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Muli:300,400,700" />
     <!-- theme stylesheet-->
     <link rel="stylesheet" href="{{ asset('css/style.default.css') }}" id="theme-stylesheet" />
     <!-- Favicon--> 
     <link rel="shortcut icon" href="{{ asset('img/favicon.ico') }}" />
    
   </head>
+
   <body>
     <header class="header">   
       <nav class="navbar navbar-expand-lg">

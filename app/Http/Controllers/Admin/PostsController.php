@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\User;
 use App\Models\Admin\Post;
+use App\Models\Admin\Category;
 use App\Http\Requests\ValidateStorePost;
 use Illuminate\Support\Facades\Storage;
 use Session;
@@ -22,8 +23,9 @@ class PostsController extends Controller
     // Create a new post
     public function create()
     {   
-
-        return view('admin.posts.create');
+        $categories = Category::all();
+        
+        return view('admin.posts.create')->with('categories',$categories);
     }
 
     // SET
@@ -39,21 +41,26 @@ class PostsController extends Controller
         $post->title = $request->title;
         $post->slug = Str::slug($post->title, '-');
         $post->body  = $request->body;
-        $post->category  = $request->category;
-        $post->image  = $request->image;
+        $teste = $post->categories()->attach([
+            'categoria' => $request->categoria, 
+        ]);
 
-        //Image Upload
-        if ($request->file('image')) {
+        dd($request->categoria);
+    
+        // $post->image  = $request->image;
+
+        // //Image Upload
+        // if ($request->file('image')) {
             
-            $path = Storage::disk('public')->put('images', $request->file('image'));
-            $post->fill( ['image'=> asset($path)] )->save();
-        }
+        //     $path = Storage::disk('public')->put('images', $request->file('image'));
+        //     $post->fill( ['image'=> asset($path)] )->save();
+        // }
 
-        // Saving the post
-        $user->posts()->save($post);
+        // // Saving the post
+        // $user->posts()->save($post);
 
-        Session::flash('success',' O post foi salvo com sucesso!');
-        return redirect()->route('post.show', $post->id);    
+        // Session::flash('success',' O post foi salvo com sucesso!');
+        // return redirect()->route('post.show', $post->id);    
 
    }
 

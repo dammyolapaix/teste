@@ -14,6 +14,8 @@
     <!-- JavaScript files-->
 
     <script src="{{ asset('assets/darkadmin/vendor/jquery/jquery.min.js') }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.8/js/select2.min.js"></script>
+    <!-- <script src="{{ asset('js/bootstrap-multiselect.js') }}"></script> -->
     <script src="{{ asset('assets/darkadmin/vendor/popper.js/umd/popper.min.js') }}"> </script>
     <script src="{{ asset('assets/darkadmin/vendor/bootstrap/js/bootstrap.min.js') }}"></script>   
     <script src="{{ asset('assets/darkadmin/vendor/jquery.cookie/jquery.cookie.js') }}"> </script>

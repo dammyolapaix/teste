@@ -24,7 +24,6 @@ class ValidateStorePost extends FormRequest
             
             'title' => 'required|unique:posts|max:255',
             'body' => 'required',
-            'category' => 'required',
             'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
 
         ];

@@ -124,3 +124,4 @@ Route::get('/home', function() {
 
 Route::get('/login', 'HomeController@login')->name('login');
 Auth::routes();
+

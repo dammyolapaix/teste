@@ -16,7 +16,7 @@ class CategoryController extends Controller
      public function index()
     {   
 
-    	$categories = Category::all();
+    	$categories = Category::orderBy('id','desc')->paginate(6);
 
         return view('admin.categories.index')->with('categories',$categories);
 
@@ -38,7 +38,7 @@ class CategoryController extends Controller
       
         $category = new Category();
 
-        $category->name = $request->name;
+        $category->name = ucwords($request->name);
      
         // Saving the category
         $category->save();
@@ -64,7 +64,7 @@ class CategoryController extends Controller
 
         $category = Category::find($id);
 
-        $category->name = $request->input('name');
+        $category->name = ucwords($request->input('name'));
  
 
         $category->save();

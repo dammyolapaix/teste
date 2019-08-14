@@ -47,6 +47,10 @@
           min-height: 200px;
         }
 
+        .select2-container--default .select2-search--inline .select2-search__field {
+          width: 100%!important;
+        }
+
       </style>
 
       <div class="page-content">
@@ -100,17 +104,17 @@
                       </div>
 
                       <div class="form-group">       
-                        <label class="form-control-label">Categoria</label>
+                        <label class="form-control-label">Selecione a Categoria</label>
                         <div class="col-sm-8" style="padding-left: 0;">
-                          <select class="selectpicker" multiple data-live-search="true">
-                            <option>Mustard</option>
-                            <option>Ketchup</option>
-                            <option>Relish</option>
+                         <select class="js-example-basic-multiple-limit js-states form-control select2-hidden-accessible" multiple="" data-select2-id="3" tabindex="-1" aria-hidden="true" name="categoria" style="width: 100%;" >
+                           @foreach($categories as $category)
+                               <option value="">{{ $category->name }}</option>
+                           @endforeach
                           </select>
                         </div>
                       </div>
-                    
-                      <div class="input-group" style="margin-bottom: 20px;">
+                   
+                      <div class="input-group" style="margin-bottom: 20px;max-width: 100%;">
                           <div class="custom-file">
                             <input type="file" class="custom-file-input"  id="validatedCustomFile" aria-describedby="inputGroupFileAddon04" name="image" value="{{ old('image') }}" />
                             <label class="custom-file-label" for="validatedCustomFile">Selecione uma imagem</label>
@@ -119,7 +123,7 @@
 
                       <div class="form-group">       
                         <input type="submit" value="Salvar" class="btn btn-primary" style="width: 90px;padding: 10px 0;" />
-                        <a href="{{ route('post.index') }}" class="btn btn-light" style="width: 90px;padding: 10px 0;">Cancelar</a>
+                        <a href="{{ route('post.index') }}" class="btn btn-light" style="width: 90px;padding: 10px 0;margin-left: 3px;">Cancelar</a>
                       </div>
                     </form>
 
@@ -157,9 +161,29 @@
         } );
     </script>
 
+    <!--  Multi select-->
+     <script>
+       
+          $(".js-example-basic-multiple-limit").select2({
+            maximumSelectionLength: 3
+          });
+    </script>
 
+   <!--  <script>
+      
+      $.ajax({
+              url: '/dashboard/create',
+              type: "post",
+              data: {id:$(".js-example-basic-multiple-limit").select2("val")},
+               success: function(response){ // What to do if we succeed
+              if(data == "success")
+            alert(response); 
+          }
+        });
+    </script> -->
     
 
   @endsection
+
 
 

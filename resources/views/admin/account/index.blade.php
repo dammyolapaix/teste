@@ -53,7 +53,9 @@
                           <th>Nome</th>
                           <th>E-mail</th>
                           <th>Imagem</th>
-                          <th colspan="2">Ações</th>
+                          <th></th>
+                          <th></th>
+                          <th colspan="3">Ações</th>
                         </tr>
                       </thead>
 
@@ -62,18 +64,20 @@
                           <tr>
                         
                             <td style="padding: 10px;max-width: 100px;">{{ $user->name }}</td> 
-                            <td style="padding: 10px 2px;max-width: 60px;">{{ $user->email }}</td>
+                            <td style="padding: 10px 2px;max-width: 80px;">{{ $user->email }}</td>
                             <td style="width: 80px;"><img src="{{ $user->image }}" alt="" style="width: 80%;"></td>
+                             <td style="width: 80px;"></td>
+                             <td style="width: 80px;"></td>
 
                             <td class="button">
                               <a href="{{route('user.show', ['id' => $user->id])}}" style="width: 100%;">
-                                <button class="btn btn-primary btn-sm" style="width: 50px;padding: 5px 0;"><i class="far fa-eye" style="font-size: 18px;"></i></button>
+                                <button class="btn btn-primary btn-sm" style="width: 45px;padding: 5px 0;"><i class="far fa-eye" style="font-size: 18px;"></i></button>
                               </a>
                             </td>
 
                              <td class="button">
                               <a href="{{route('user.edit', ['id' => $user->id])}}" style="width: 100%;">
-                                <button class="btn btn-warning btn-sm" style="width: 50px;padding: 5px 0;margin-left: -165px;"><i class="fas fa-pencil-alt" style="font-size: 16px;color: #fff;"></i></button>
+                                <button class="btn btn-warning btn-sm" style="width: 45px;padding: 5px 0;margin-left: -140px;"><i class="fas fa-pencil-alt" style="font-size: 16px;color: #fff;"></i></button>
                               </a>
                             </td>
 
