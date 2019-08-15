@@ -45,7 +45,7 @@ class PostsController extends Controller
             'categoria' => $request->categoria, 
         ]);
 
-        dd($request->categoria);
+        dd($request->input('categoria'));
     
         // $post->image  = $request->image;
 

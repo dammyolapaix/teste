@@ -77,7 +77,7 @@
 
                              <td class="button">
                               <a href="{{route('user.edit', ['id' => $user->id])}}" style="width: 100%;">
-                                <button class="btn btn-warning btn-sm" style="width: 45px;padding: 5px 0;margin-left: -140px;"><i class="fas fa-pencil-alt" style="font-size: 16px;color: #fff;"></i></button>
+                                <button class="btn btn-warning btn-sm" style="width: 45px;padding: 5px 0;margin-left: -123px;"><i class="fas fa-pencil-alt" style="font-size: 16px;color: #fff;"></i></button>
                               </a>
                             </td>
 
