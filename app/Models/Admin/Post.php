@@ -10,7 +10,7 @@ class Post extends Model
 {
 
     protected $fillable = [
-        'title', 'slug', 'body', 'category', 'image','user_id'
+        'title', 'slug', 'body', 'image','user_id'
     ];
 
      // One to Many(belongs to one author)

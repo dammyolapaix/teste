@@ -1,53 +1,84 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>flipLightBox Multi Image Demo</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<style type="text/css">
-	body { text-align: center; } 
-	img { margin: 1px; } 
-	a { text-decoration: none; }
-</style>
+<html>
+  <head>
+  <title>VLT Advogados</title>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" type="text/css" href="{{ asset('css/slick.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/slick-theme.css') }}" />
 
-</head>
-<body>
+    <style type="text/css">
+	    .slider {
+	        width: 95%;
+	        margin: 0 auto;
+	    }
+
+	    .slick-slide {
+	      margin: 0px 5px;
+	    }
+
+	    .slick-slide img {
+	      width: 100%;
+	    }
+
+	    .slick-prev:before,
+	    .slick-next:before {
+	      color: black;
+	    }
 
 
-	<a href="{{ asset('img/galeria/office-820390_1920.jpg') }}" class="flipLightBox">
-	<img src="{{ asset('img/galeria/office-820390_1920.jpg') }}" width="30%" height="225" alt="flipLightBox Image 1" />
-	<span><b>VLT Advogados</b> Escritório de Advocacia em Pouso Alegre</span>
-	</a>
+	    .slick-slide {
+	      transition: all ease-in-out .3s;
+	      opacity: .2;
+	    }
+	    
+	    .slick-active {
+	      opacity: .5;
+	    }
 
-	<a href="{{ asset('img/galeria/macbook-336704_1920.jpg') }}" class="flipLightBox">
-	<img src="{{ asset('img/galeria/macbook-336704_1920.jpg') }}" width="30%" height="225" alt="flipLightBox Image 2" />
-	<span><b>VLT Advogados</b><br /> Escritório de Advocacia em Pouso Alegre</span>
-	</a>
+	    .slick-current {
+	      opacity: 1;
+	    }
+  	</style>
 
-	<a href="{{ asset('img/galeria/office-1081807_1920.jpg') }}" class="flipLightBox">
-	<img src="{{ asset('img/galeria/office-1081807_1920.jpg') }}" width="30%" height="225" alt="flipLightBox Image 3" />
-	<span><b>VLT Advogados</b> Escritório de Advocacia em Pouso Alegre</span>
-	</a>
+  </head>
+  <body>
 
-	<a href="{{ asset('img/galeria/business-3152586_1920.jpg') }}" class="flipLightBox">
-	<img src="{{ asset('img/galeria/business-3152586_1920.jpg') }}" width="30%" height="225" alt="flipLightBox Image 4" />
-	<span><b>The Final LightBox</b> Escritório de Advocacia em Pouso Alegre</span>
-	</a>
+    <section class="regular slider">
+    <div>
+      <img src="http://placehold.it/350x300?text=1">
+    </div>
+    <div>
+      <img src="http://placehold.it/350x300?text=2">
+    </div>
+    <div>
+      <img src="http://placehold.it/350x300?text=3">
+    </div>
+    <div>
+      <img src="http://placehold.it/350x300?text=4">
+    </div>
+    <div>
+      <img src="http://placehold.it/350x300?text=5">
+    </div>
+    <div>
+      <img src="http://placehold.it/350x300?text=6">
+    </div>
+  </section>
 
-	<a href="{{ asset('img/galeria/laptop-3196481_1920.jpg') }}" class="flipLightBox">
-	<img src="{{ asset('img/galeria/laptop-3196481_1920.jpg') }}" width="30%" height="225" alt="flipLightBox Image 5" />
-	<span><b>The Final LightBox</b> Escritório de Advocacia em Pouso Alegre</span>
-	</a>
+  <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+  <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+  <script type="text/javascript" src="{{ asset('js/slick.min.js') }}"></script>
 
-	<a href="{{ asset('img/galeria/office-730681_1920.jpg') }}" class="flipLightBox">
-	<img src="{{ asset('img/galeria/office-730681_1920.jpg') }}" width="30%" height="225" alt="flipLightBox Image 6" />
-	<span><b>The Final LightBox</b> Escritório de Advocacia em Pouso Alegre</span>
-	</a>
+   <script type="text/javascript">
+	    $(document).on('ready', function() {
+	     
+	      $(".regular").slick({
+	        dots: true,
+	        infinite: true,
+	        slidesToShow: 3,
+	        slidesToScroll: 3
+	      });
+	    });
+	</script>
 
-	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
-	<script type="text/javascript" src="{{ asset('js/fliplightbox.min.js') }}"></script>
-	<script type="text/javascript">$('body').flipLightBox()</script>
-
-</body>
+  </body>
 </html>

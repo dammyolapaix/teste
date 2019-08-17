@@ -36,7 +36,9 @@
     <!--////////////////////////////-->
     <!-- Scripts JS -->
     <script type="text/javascript" src="{{ asset('js/jquery-3.3.1.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/jquery-migrate-1.2.1.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/popper.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/slick.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/bootstrap.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/functions.js') }}"></script>
         

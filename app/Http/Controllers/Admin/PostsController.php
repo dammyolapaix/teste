@@ -41,26 +41,25 @@ class PostsController extends Controller
         $post->title = $request->title;
         $post->slug = Str::slug($post->title, '-');
         $post->body  = $request->body;
-        $teste = $post->categories()->attach([
-            'categoria' => $request->categoria, 
-        ]);
+        $post->save();
+        $post->categories()->attach($request->categoria);
 
-        dd($request->input('categoria'));
+        // dd($request->categoria);
     
-        // $post->image  = $request->image;
+        $post->image  = $request->image;
 
-        // //Image Upload
-        // if ($request->file('image')) {
+        //Image Upload
+        if ($request->file('image')) {
             
-        //     $path = Storage::disk('public')->put('images', $request->file('image'));
-        //     $post->fill( ['image'=> asset($path)] )->save();
-        // }
+            $path = Storage::disk('public')->put('images', $request->file('image'));
+            $post->fill( ['image'=> asset($path)] )->save();
+        }
 
-        // // Saving the post
-        // $user->posts()->save($post);
+        // Saving the post
+        $user->posts()->save($post);
 
-        // Session::flash('success',' O post foi salvo com sucesso!');
-        // return redirect()->route('post.show', $post->id);    
+        Session::flash('success',' O post foi salvo com sucesso!');
+        return redirect()->route('post.show', $post->id);    
 
    }
 

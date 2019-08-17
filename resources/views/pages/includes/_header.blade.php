@@ -12,7 +12,10 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap.min.css') }}" />
     <link rel="stylesheet" type="text/css" href="{{ asset('css/mdb.min.css') }}" />
-    
+    <!-- Slick-theme -->
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/slick.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/slick-theme.css') }}" />
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
 
     <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}" />
