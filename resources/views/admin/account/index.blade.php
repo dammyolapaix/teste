@@ -71,13 +71,13 @@
 
                             <td class="button">
                               <a href="{{route('user.show', ['id' => $user->id])}}" style="width: 100%;">
-                                <button class="btn btn-primary btn-sm" style="width: 45px;padding: 5px 0;"><i class="far fa-eye" style="font-size: 18px;"></i></button>
+                                <button class="btn btn-primary btn-sm" style="width: 47px;padding: 7px 0;"><i class="far fa-eye" style="font-size: 18px;"></i></button>
                               </a>
                             </td>
 
                              <td class="button">
                               <a href="{{route('user.edit', ['id' => $user->id])}}" style="width: 100%;">
-                                <button class="btn btn-warning btn-sm" style="width: 45px;padding: 5px 0;margin-left: -123px;"><i class="fas fa-pencil-alt" style="font-size: 16px;color: #fff;"></i></button>
+                                <button class="btn btn-warning btn-sm" style="width: 47px;padding: 7px 0;margin-left: -123px;"><i class="fas fa-pencil-alt" style="font-size: 16px;color: #fff;"></i></button>
                               </a>
                             </td>
 

@@ -54,7 +54,7 @@
                           <!-- <th>Id</th> -->
                           <th>Título</th>
                           <th>Texto</th>
-                          <th>Categoria</th>
+                          <th>Categorias</th>
                           <th>Imagem</th>
                           <th>Autor</th>
                           <th colspan="3">Ações</th>
@@ -74,7 +74,7 @@
                             
                             </td>
                          
-                            <td style="padding: 10px;">@foreach($post->categories as $category){{$category->name}}@endforeach</td>
+                            <td style="padding: 10px;">@foreach($post->categories as $category) - {{$category->name}}@endforeach</td>
                             
                             <td style="width: 95px;"><img src="{{ $post->image }}" alt="" style="width: 100%;"></td>
 

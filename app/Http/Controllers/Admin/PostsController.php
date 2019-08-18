@@ -70,7 +70,6 @@ class PostsController extends Controller
 
         $post = Post::find($id);
 
-        // spitting the object to the view
         return view('admin.posts.show')->with('post',$post);
     }
 
@@ -78,10 +77,10 @@ class PostsController extends Controller
     // Edit
     public function edit($id)
     {
+        $categories = Category::all();
         $post = Post::find($id);
 
-        // spitting the object to the view
-        return view('admin.posts.edit')->with('post',$post);
+        return view('admin.posts.edit')->with('post',$post)->with('categories',$categories);
     }
   
     // SET
@@ -92,7 +91,7 @@ class PostsController extends Controller
          $validatedData = $request->validate([
             'title' => 'required',
             'body' => 'required',
-            'category' => 'required'
+            
         ]);
 
         $post = Post::find($id);
@@ -100,7 +99,8 @@ class PostsController extends Controller
         $post->title = $request->input('title');
         $post->slug  = Str::slug($post->title, '-');
         $post->body  = $request->input('body');
-        $post->category  = $request->input('category');
+        $post->save();
+        $post->categories()->sync($request->categoria);
       
         //Image Upload
         if(isset($request->image)){
@@ -134,7 +134,7 @@ class PostsController extends Controller
          Session::flash('success',' O post foi deletado com sucesso!');
 
         // Redirect to view
-         return redirect()->route('admin.index');
+         return redirect()->route('post.index');
     }
 
 } // end class

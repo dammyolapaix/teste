@@ -90,14 +90,14 @@ Route::group(['middleware' => ['web']], function() {
 	/// Create user permission
 	Route::get('/create', function () {
 
-		// $user = User::find(2);
+		$user = User::find(1);
 
-		// $role = new Role;
-		// $role->name = "Author";
+		$role = new Role;
+		$role->name = "Admin";
 
-		// $user->roles()->save($role);
+		$user->roles()->save($role);
 
-  //   	return "Permissão criada com sucesso!";
+    	return "Permissão criada com sucesso!";
 
 	});
 

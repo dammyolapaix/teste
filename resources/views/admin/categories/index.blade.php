@@ -75,13 +75,13 @@
 
                             <td class="button">
                               <a href="#" style="width: 100%;">
-                                <button class="btn btn-primary btn-sm" style="width: 45px;padding: 5px 0;"><i class="far fa-eye" style="font-size: 18px;"></i></button>
+                                <button class="btn btn-primary btn-sm" style="width: 47px;padding: 7px 0;"><i class="far fa-eye" style="font-size: 18px;"></i></button>
                               </a>
                             </td>
 
                             <td class="button">
                               <a href="{{route('categoria.edit', ['id' => $category->id])}}" style="width: 100%;">
-                                <button class="btn btn-warning btn-sm" style="width: 45px;padding: 5px 0;"><i class="fas fa-pencil-alt" style="font-size: 16px;color: #fff;"></i></button>
+                                <button class="btn btn-warning btn-sm" style="width: 47px;padding: 7px 0;"><i class="fas fa-pencil-alt" style="font-size: 16px;color: #fff;"></i></button>
                               </a>
                             </td>
 
@@ -90,7 +90,7 @@
                                 <form action="{{route('categoria.delete', ['id' => $category->id])}}" method="POST" id="delete">
                                    {{ method_field('POST') }}
                                    @csrf
-                                  <button type="input" class="btn btn-danger btn-sm" style="width: 45px;padding: 5px 0;" onclick="return myFunction();"><i class="fas fa-trash-alt" style="font-size: 15px;"></i>
+                                  <button type="input" class="btn btn-danger btn-sm" style="width: 47px;padding: 7px 0;" onclick="return myFunction();"><i class="fas fa-trash-alt" style="font-size: 15px;"></i>
                                   </button>
                                 </form>           
                               </div>

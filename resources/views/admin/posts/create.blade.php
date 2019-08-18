@@ -167,21 +167,7 @@
           $(".js-example-basic-multiple-limit").select2({
             maximumSelectionLength: 3
           });
-    </script>
-
-   <!--  <script>
-      
-      $.ajax({
-              url: '/dashboard/create',
-              type: "post",
-              data: {id:$(".js-example-basic-multiple-limit").select2("val")},
-               success: function(response){ // What to do if we succeed
-              if(data == "success")
-            alert(response); 
-          }
-        });
-    </script> -->
-    
+    </script> 
 
   @endsection
 

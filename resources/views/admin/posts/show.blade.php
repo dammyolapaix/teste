@@ -6,6 +6,26 @@
 
   @section('content')
 
+  <style type="text/css">
+    
+    @media only screen and (max-width: 400px) {
+
+      .img-show {
+        width: 90%!important;
+      }
+
+      .dl-horizontal {
+        width: 100%;
+      }
+
+      .button {
+        margin-bottom: 10px;
+        width: 80px;
+      }
+    }
+
+  </style>
+
 
   <div class="page-content">
 
@@ -22,7 +42,7 @@
       <div class="row">
         <div class="col-md-8" style="background: #2d3035;margin: 20px 2% 20px;height: auto;">
 
-          <img src="{{ $post->image }}" alt="" style="width: 40%;margin-bottom: 15px;">
+          <img src="{{ $post->image }}" alt="" style="width: 40%;margin-bottom: 15px;" class="img-show">
           <h1 style="font-size: 30px;">{{$post->title}}</h1>
           <p class="lead" style="font-size: 16px;height: auto;"> {{ strip_tags($post->body) }}</p>
 
@@ -46,21 +66,21 @@
             <hr style="width: 100%;margin-top: -15px;">
 
             <div class="row">
-              <div class="col-sm-4">  
+              <div class="col-sm-4 button">  
                 <a href="{{route('post.edit', ['id' => $post->id])}}" class="btn btn-warning btn-sm"
-                  style="width: 60px;padding: 7px 0;">Editar</a>
+                  style="width: 70px;padding: 9px 0;">Editar</a>
               </div>
 
-              <div class="col-sm-4">
+              <div class="col-sm-4 button">
                 <form action="{{route('post.delete', ['id' => $post->id])}}" method="POST" id="delete">
                    {{ method_field('POST') }}
                    @csrf
-                  <input type="submit" value="Deletar" class="btn btn-primary btn-sm" onclick="return myFunction();" style="width: 60px;padding: 7px 0;" />
+                  <input type="submit" value="Deletar" class="btn btn-primary btn-sm" onclick="return myFunction();" style="width: 70px;padding: 9px 0;" />
                 </form>           
               </div>
 
-              <div class="col-sm-4">  
-                <a href="{{ route('post.index') }}" class="btn btn-light btn-sm" style="width: 60px;padding: 7px 0;">Voltar</a>
+              <div class="col-sm-4 button">  
+                <a href="{{ route('post.index') }}" class="btn btn-light btn-sm" style="width: 70px;padding: 9px 0;">Voltar</a>
               </div>
             </div>
           </div>

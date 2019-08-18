@@ -48,8 +48,8 @@
                       </div>
 
                       <div class="form-group">       
-                        <input type="submit" value="Salvar" class="btn btn-primary" />
-                        <a href="{{ route('user.index',['id' => $user->id]) }}" class="btn btn-primary" style="margin-left: 1%;">Cancelar</a>
+                        <input type="submit" value="Salvar" class="btn btn-primary" style="width: 90px;padding: 10px 0;" />
+                        <a href="{{ route('user.index',['id' => $user->id]) }}" class="btn btn btn-light" style="margin-left: 4px;width: 90px;padding:10px 0;">Cancelar</a>
                       </div>
                     </form>
 

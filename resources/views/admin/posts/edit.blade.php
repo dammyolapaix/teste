@@ -42,6 +42,10 @@
         .ck.ck-editor__main>.ck-editor__editable:not(.ck-focused) {
           background: transparent;
         }
+        
+        .select2-container--default .select2-search--inline .select2-search__field {
+          width: 100%!important;
+        }
 
       </style>
 
@@ -95,26 +99,13 @@
                         </main>
                       </div>
 
-                <!--       <div class="form-group">       
-                        <label class="form-control-label">Texto</label>
-                        <textarea name="body" value="{{ $post->body }}" class="form-control" style="height: 40vh;" >{{ $post->body }}</textarea>
-                      </div> -->
-
                       <div class="form-group">       
-                        <label class="form-control-label">Categoria</label>
+                        <label class="form-control-label">Selecione a Categoria</label>
                         <div class="col-sm-8" style="padding-left: 0;">
-                          <select name="category" class="form-control mb-3 mb-3">
-                            <option>{{ $post->category }}</option>
-                            <option>Atualidades</option>
-                            <option>Direito Bancário</option>
-                            <option>Direito Civil</option>
-                            <option>Direito Criminal</option>
-                            <option>Direito de Família</option>
-                            <option>Direito Imobiliário</option>
-                            <option>Direito Médico</option>
-                            <option>Direito Previdenciário</option>
-                            <option>Direito Trabalhista</option>
-                            <option>Direito Tributário</option>
+                         <select class="js-example-basic-multiple-limit js-states form-control select2-hidden-accessible" multiple="" data-select2-id="3" tabindex="-1" aria-hidden="true" name="categoria[]" style="width: 100%;" >
+                           @foreach($categories as $category)
+                               <option value="{{ $category->id }}">{{ $category->name }}</option>
+                           @endforeach
                           </select>
                         </div>
                       </div>
@@ -133,8 +124,8 @@
                       </div>
 
                       <div class="form-group">       
-                        <input type="submit" value="Salvar" class="btn btn-primary"  style="width: 100px;height: 50px;"/>
-                        <a href="{{ route('post.index') }}" class="btn btn-primary" style="width: 100px;height: 50px;margin-left: 1%;line-height: 35px;">Cancelar</a>
+                        <input type="submit" value="Salvar" class="btn btn-primary"  style="width: 90px;padding: 10px 0;"/>
+                        <a href="{{ route('post.index') }}" class="btn btn-light" style="width: 90px;padding: 10px 0;margin-left: 4px;">Cancelar</a>
                       </div>
                     </form>
 
@@ -171,6 +162,14 @@
           console.error( err.stack );
         } );
     </script>
+
+    <!--  Multi select-->
+     <script>
+       
+          $(".js-example-basic-multiple-limit").select2({
+            maximumSelectionLength: 3
+          });
+    </script> 
 
 @endsection
 

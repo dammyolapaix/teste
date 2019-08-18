@@ -86,7 +86,7 @@
 
                       <div class="form-group">       
                         <input type="submit" value="Salvar" class="btn btn-primary"  style="width: 90px;padding: 10px 0;"/>
-                        <a href="{{ route('categoria.index') }}" class="btn btn-light" style="width: 90px;padding: 10px 0;margin-left: 1%;">Cancelar</a>
+                        <a href="{{ route('categoria.index') }}" class="btn btn-light" style="width: 90px;padding: 10px 0;margin-left: 4px;">Cancelar</a>
                       </div>
                     </form>
 

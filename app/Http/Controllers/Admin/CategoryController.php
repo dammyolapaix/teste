@@ -38,6 +38,7 @@ class CategoryController extends Controller
       
         $category = new Category();
 
+        //ucwords = funçao para salvar com letras maiúsculas
         $category->name = ucwords($request->name);
      
         // Saving the category
