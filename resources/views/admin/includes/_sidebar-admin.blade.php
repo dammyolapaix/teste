@@ -12,7 +12,7 @@
             <div class="title">
               <h1 class="h5">{{ $currentUser->name }}</h1>
      
-                  <p class="no-margin-bottom">role</p>
+                  <p class="no-margin-bottom">{{ $role }}</p>
           
             </div>
           </div>

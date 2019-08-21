@@ -1,8 +1,18 @@
 
 
+<style type="text/css">
+  .list-group-item:last-child {
+    margin-bottom: -.1em!important;
+  }
+
+  .dropdown-menu {
+    padding: 0;
+  }
+</style>
+
 <div class="container posts-topo">
     <div class="row login">
-        <div class="col-md-4"></div>
+        <div class="col-md-4" style="padding-top: 7px;"><a href="#">Todos os posts</a></div>
         <div class="col-md-4">
           <ul class="navbar-nav mr-auto">
              <li class="nav-item dropdown">
@@ -11,17 +21,10 @@
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <ul style="padding-left: 0;width: 300px;">
-                  <li class="list-group-item list-group-item-action list-group-item-light"><a href="{{ route('blog.search', ['id'=>1]) }}" id="01">Todos os posts</a></li>
-                  <li class="list-group-item list-group-item-action list-group-item-light"><a href="{{ route('blog.search', ['id'=>2]) }}">Atualidades</a></li>
-                  <li class="list-group-item list-group-item-action list-group-item-light"><a href="{{ route('blog.search', ['id'=>3]) }}">Direito Bancário</a></li>
-                  <li class="list-group-item list-group-item-action list-group-item-light"><a href="{{ route('blog.search', ['id'=>4]) }}">Direito Civil</a></li>
-                  <li class="list-group-item list-group-item-action list-group-item-light"><a href="{{ route('blog.search', ['id'=>5]) }}">Direito Criminal</a></li>
-                  <li class="list-group-item list-group-item-action list-group-item-light"><a href="{{ route('blog.search', ['id'=>6]) }}">Direito Família</a></li>
-                  <li class="list-group-item list-group-item-action list-group-item-light"><a href="{{ route('blog.search', ['id'=>7]) }}">Direito Imobiliário</a></li>
-                  <li class="list-group-item list-group-item-action list-group-item-light"><a href="{{ route('blog.search', ['id'=>8]) }}">Direito Médico</a></li>
-                  <li class="list-group-item list-group-item-action list-group-item-light"><a href="{{ route('blog.search', ['id'=>9]) }}">Direito Previdenciário</a></li>
-                  <li class="list-group-item list-group-item-action list-group-item-light"><a href="{{ route('blog.search', ['id'=>10]) }}">Direito Trabalhista</a></li>
-                  <li class="list-group-item list-group-item-action list-group-item-light"><a href="{{ route('blog.search', ['id'=>11]) }}">Direito Tributário</a></li>
+                   @foreach($categories as $category)
+                      <a href="{{ route('blog.search', ['id' => $category->id]) }}" id=""><li class="list-group-item list-group-item-action list-group-item-light">{{ $category->name }}</li></a>
+                  @endforeach
+                  
                 </ul>
               </div>
             </li>

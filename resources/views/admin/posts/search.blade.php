@@ -9,7 +9,7 @@
       <style type="text/css">
           
           td.button {
-            padding: 12px 5px 10px;
+            padding: 12px 4px 10px;
           }
 
       </style>
@@ -45,8 +45,9 @@
                           <!-- <th>Id</th> -->
                           <th>Título</th>
                           <th>Texto</th>
-                          <th>Categoria</th>
+                          <th>Categorias</th>
                           <th>Imagem</th>
+                          <th>Autor</th>
                           <th colspan="3">Ações</th>
                          
                         </tr>
@@ -57,23 +58,25 @@
                         @foreach($posts as $post)
 
                           <tr>
-                            <!-- <th scope="row">{{$post->id}}</th> -->
+                          
                             <td style="padding: 10px;">{{ substr($post->title, 0, 55) }}{{ strlen($post->title) > 55 ? " ..." : "" }}</td>
 
                             <td style="padding: 10px 7px;">{{substr(strip_tags($post->body), 0, 40) . '...'}}</td>
-                            <td style="padding: 10px;">{{$post->category}}</td>
+                            <td style="padding: 10px;">@foreach($post->categories as $category) - {{$category->name}}@endforeach</td>
 
-                            <td style="width: 50px;"><img src="{{ $post->image }}" alt="" style="width: 80%;"></td>
+                            <td style="width: 95px;"><img src="{{ $post->image }}" alt="" style="width: 100%;"></td>
+
+                            <td style="width: 50px;"><img src="{{ $post->author->image }}" alt="" style="width: 100%;"></td>
 
                              <td class="button">
                               <a href="{{route('post.show', ['id' => $post->id])}}" style="width: 100%;">
-                                <button class="btn btn-primary btn-sm" style="width: 45px;padding: 5px 0;"><i class="far fa-eye" style="font-size: 18px;"></i></button>
+                                <button class="btn btn-primary btn-sm" style="width: 47px;padding: 7px 0;"><i class="far fa-eye" style="font-size: 18px;"></i></button>
                               </a>
                             </td>
 
                              <td class="button">
                               <a href="{{route('post.edit', ['id' => $post->id])}}" style="width: 100%;">
-                                <button class="btn btn-warning btn-sm" style="width: 45px;padding: 5px 0;"><i class="fas fa-pencil-alt" style="font-size: 16px;color: #fff;"></i></button>
+                                <button class="btn btn-warning btn-sm" style="width: 47px;padding: 7px 0;"><i class="fas fa-pencil-alt" style="font-size: 16px;color: #fff;"></i></button>
                               </a>
                             </td>
 
@@ -82,7 +85,7 @@
                                 <form action="{{route('post.delete', ['id' => $post->id])}}" method="POST" id="delete">
                                    {{ method_field('POST') }}
                                    @csrf
-                                  <button type="input" class="btn btn-danger btn-sm" style="width: 45px;padding: 5px 0;" onclick="return myFunction();"><i class="fas fa-trash-alt" style="font-size: 15px;"></i>
+                                  <button type="input" class="btn btn-danger btn-sm" style="width: 47px;padding: 7px 0;" onclick="return myFunction();"><i class="fas fa-trash-alt" style="font-size: 15px;"></i>
                                   </button>
                                 </form>           
                               </div>

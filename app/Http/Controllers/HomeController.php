@@ -30,13 +30,15 @@ class HomeController extends Controller
            if ($role->name == 'Admin') {
                
                 $posts = Post::with('author')->paginate(6);
+                $role = 'Admin';
            }
            else {
 
                 $posts = Post::where('user_id', Auth::user()->id)->paginate(6);
+                $role = 'Autor';
            }
 
-             return view('admin.posts.index')->with('posts',$posts);
+             return view('admin.posts.index')->with('posts',$posts)->with('role',$role);
         }
     }
 

@@ -846,6 +846,8 @@ p {
 /*+Desktop*/
 
 @media only screen and (min-width: 1050px) {
+
+
   /*/// HEADER //////////////*/
 
   .bg-light {
@@ -1109,7 +1111,6 @@ p {
 
   .divisao-profissionais {
     width: 2px;
-    height: 100vh;
     background: #ececec;
   }
 
@@ -1273,6 +1274,10 @@ p {
         position: absolute;
         bottom: 25px;
         right: 6%;
+     }
+
+     .card-body {
+      min-height: 290px;
      }
 
     /*/// PAGINA POST SINGLE //////////////*/

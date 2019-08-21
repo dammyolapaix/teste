@@ -9,7 +9,7 @@
       <style type="text/css">
           
           td.button {
-            padding: 12px 3px 10px;
+            padding: 12px 4px 10px;
           }
 
       </style>
@@ -45,7 +45,9 @@
                 <div class="block margin-bottom-sm">
                   <div class="top-table" style="display: flex;justify-content: space-between;">
                     <div class="title"><strong>Meus Posts</strong></div>
-                    <a href="{{ route('post.create')}}"><button class="btn btn-success"><i class="fas fa-plus-circle" style="margin-right: 5px;"></i>Novo</button></a>
+                    <a href="{{ route('post.create')}}">
+                      <button class="btn btn-success" style="width: 90px;padding: 10px 0;"><i class="fas fa-plus-circle" style="margin-right: 5px;"></i>Novo</button>
+                    </a>
                   </div>
                   <div class="table-responsive"> 
                     <table class="table">

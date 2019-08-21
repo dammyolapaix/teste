@@ -42,7 +42,7 @@ Route::group(['middleware' => ['web']], function() {
 
 	Route::get('/posts', 'Blog\BlogController@index')->name('blog.index');
 	Route::get('/single/{slug}', 'Blog\BlogController@single')->name('blog.single');
-	Route::get('/blog/search', 'Blog\BlogController@search')->name('blog.search');
+	Route::get('/blog/search/{id}', 'Blog\BlogController@search')->name('blog.search');
 
 
 //////////////////////////////////////////
@@ -90,10 +90,10 @@ Route::group(['middleware' => ['web']], function() {
 	/// Create user permission
 	Route::get('/create', function () {
 
-		$user = User::find(1);
+		$user = User::find(2);
 
 		$role = new Role;
-		$role->name = "Admin";
+		$role->name = "Author";
 
 		$user->roles()->save($role);
 

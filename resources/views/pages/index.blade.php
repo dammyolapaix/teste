@@ -5,6 +5,25 @@
 
     @section('content')
 
+    <style type="text/css">
+      
+      p.card-text02 {
+        max-width: 65%;
+        text-align: right;
+        font-size: 15px;
+        margin-bottom: 57px!important;
+      }
+
+      @media only screen and (max-width: 400px) {
+
+         p.card-text02 {
+          text-align: left;
+         }
+
+      }
+
+    </style>
+
       <!-- Slide Topo -->
 
         <section id="slide-topo">
@@ -31,14 +50,14 @@
                     <div class="col-md-4">
                       <div class="card" style="border-top: 10px solid #d03f3f;min-height: 520px;max-height: 520px;">
                         <div class="image-wrapper" style="width: 100%;height: 200px;overflow: hidden;">
-                              <img src="{{ $post->image }}" alt="VLT Advogados" style="width: 100%;height: 100%;">
+                              <a href="{{route('blog.single', ['slug' => $post->slug])}}"><img src="{{ $post->image }}" alt="VLT Advogados" style="width: 100%;height: 100%;"></a>
                          </div>
                         <div class="card-body" style="text-align: left;min-height: 290px;">
                           <h5 class="card-title">{{ $post->title }}</h5>
                           <p class="card-text">{{substr(strip_tags($post->body), 0, 140) . '...'}}</p>
                           <div class="more-info">
                               <a href="{{route('blog.single', ['slug' => $post->slug])}}" class="btn btn-primary" style="position: absolute;bottom: 15px;">Leia mais</a>
-                              <p class="card-text"><i class="far fa-heart"></i><i>{{ $post->category }}</i></p>
+                              <p class="card-text02">@foreach($post->categories as $category) <i class="far fa-heart"></i> {{$category->name}}@endforeach</p>
                           </div>
                         </div>
                       </div>

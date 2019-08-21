@@ -25,7 +25,7 @@ class ValidateStorePost extends FormRequest
             'title' => 'required|unique:posts|max:255',
             'body' => 'required',
             'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            'category*' => 'required'
+            'category[]' => 'required'
 
         ];
     }
@@ -37,7 +37,7 @@ class ValidateStorePost extends FormRequest
             'title.max' => 'O título deve conter no máximo 255 caracteres!',
             'title.unique' => 'Esse título já existe, por favor digite outro diferente!',
             'body.required' => 'O campo texto é obrigatório!',
-            'category.required'  => 'O campo categoria é obrigatório!',
+            'category[].required'  => 'O campo categoria é obrigatório!',
             'image.required'  => 'Selecione uma imagem!'
         ];
     }

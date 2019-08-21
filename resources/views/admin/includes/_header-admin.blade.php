@@ -56,12 +56,17 @@
             <div class="list-inline-item"><a href="#" class="search-open nav-link"><i class="fas fa-search"></i></a></div>
             <div class="list-inline-item dropdown"><a id="navbarDropdownMenuLink1" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link messages-toggle"><i class="icon-email"></i><span class="badge dashbg-1">1</span></a>
               <div aria-labelledby="navbarDropdownMenuLink1" class="dropdown-menu messages"><a href="#" class="dropdown-item message d-flex align-items-center">
-                  <div class="profile"><img src="{{ asset('img/avatar-3.jpg') }}" alt="..." class="img-fluid">
+                  <div class="profile"><img src="{{ $currentUser->image }}" alt="..." class="img-fluid">
                     <div class="status online"></div>
                   </div>
-                  <div class="content">   <strong class="d-block">VLT Advogados</strong><span class="d-block">Bem-vindo ao seu sistema. Poste algo incrível!</span><small class="date d-block">Admin</small></div></a><a href="#" class="dropdown-item message d-flex align-items-center">
+                  <div class="content">   <strong class="d-block">VLT Advogados</strong><span class="d-block">Bem-vindo ao seu sistema. Poste algo incrível!</span><small class="date d-block">{{ $role }}</small></div></a><a href="#" class="dropdown-item message d-flex align-items-center">
 
-                  </a><a href="#" class="dropdown-item text-center message"> <strong>Logout <i class="fa fa-angle-right"></i></strong></a></div>
+                   <a id="logout" href="{{ route('logout') }}" class="nav-link" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" style="text-align: center;"> <span class="d-none d-sm-inline">Logout </span></a>
+
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                      @csrf
+                    </form>
+                </div>
             </div>
 
             <!-- Log out -->

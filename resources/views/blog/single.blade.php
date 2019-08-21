@@ -11,6 +11,22 @@
         margin-bottom: 0;
       }
 
+      p.card-text02 {
+        max-width: 65%;
+        text-align: right;
+        font-size: 15px;
+        margin-bottom: 57px!important;
+      }
+
+      @media only screen and (max-width: 400px) {
+
+         p.card-text02 {
+          text-align: left;
+          margin-top: 23px;
+         }
+
+      }
+
     </style>
       
         <!-- Pesquisa de posts por categoria e keywords-->
@@ -79,7 +95,7 @@
                               <p class="card-text">{{substr(strip_tags($post->body), 0, 90) . '...'}}</p>
                               <div class="more-info">
                                 <a href="{{route('blog.single', ['slug' => $post->slug])}}" class="btn btn-primary" style="position: absolute;bottom: 15px;">Leia mais</a>
-                                <p class="card-text"><i class="far fa-heart"></i><i>{{ $post->category }}</i></p>
+                                <p class="card-text02">@foreach($post->categories as $category) <i class="far fa-heart"></i> {{$category->name}}@endforeach</p>
                               </div>
                             </div>
                           </div>
@@ -88,7 +104,6 @@
                 </div>
               
               </div><!-- end container -->
-
 
        </div><!-- end container geral -->
 
