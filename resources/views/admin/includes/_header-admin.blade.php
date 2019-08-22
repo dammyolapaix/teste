@@ -59,7 +59,7 @@
                   <div class="profile"><img src="{{ $currentUser->image }}" alt="..." class="img-fluid">
                     <div class="status online"></div>
                   </div>
-                  <div class="content">   <strong class="d-block">VLT Advogados</strong><span class="d-block">Bem-vindo ao seu sistema. Poste algo incrível!</span><small class="date d-block">{{ $role }}</small></div></a><a href="#" class="dropdown-item message d-flex align-items-center">
+                  <div class="content">   <strong class="d-block">VLT Advogados</strong><span class="d-block">Bem-vindo ao seu sistema. Poste algo incrível!</span><small class="date d-block">Role</small></div></a><a href="#" class="dropdown-item message d-flex align-items-center">
 
                    <a id="logout" href="{{ route('logout') }}" class="nav-link" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" style="text-align: center;"> <span class="d-none d-sm-inline">Logout </span></a>
 
