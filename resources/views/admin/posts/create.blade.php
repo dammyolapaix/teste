@@ -106,7 +106,7 @@
                       <div class="form-group">       
                         <label class="form-control-label">Selecione a Categoria</label>
                         <div class="col-sm-8" style="padding-left: 0;">
-                         <select class="js-example-basic-multiple-limit js-states form-control select2-hidden-accessible" multiple="" data-select2-id="3" tabindex="-1" aria-hidden="true" name="categoria[]" style="width: 100%;" >
+                         <select class="js-example-basic-multiple-limit js-states form-control select2-hidden-accessible" multiple="" data-select2-id="3" tabindex="-1" aria-hidden="true" name="categoria[]" id="categoria" style="width: 100%;" >
                            @foreach($categories as $category)
                                <option value="{{ $category->id }}">{{ $category->name }}</option>
                            @endforeach

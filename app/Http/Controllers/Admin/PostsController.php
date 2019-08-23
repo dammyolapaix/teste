@@ -32,6 +32,7 @@ class PostsController extends Controller
     // Create a new post
     public function store(ValidateStorePost $request)
     {
+        
         // finding the user
         $user = Auth::user();
 

@@ -23,58 +23,9 @@ class SearchController extends Controller
 			$posts = Post::orderBy('id','desc')->paginate(5);
 			return view('admin.posts.search')->with('posts',$posts);
 		}
-		elseif ($post == 2) {
+		
 			
-			$posts = Post::where('category', 'Atualidades')->latest()->paginate(5);
-			return view('admin.posts.search', ['posts' => $posts]);
-		}
-		elseif ($post == 3) {
-			
-			$posts = Post::where('category', 'Direito Bancário')->latest()->paginate(5);
-			return view('admin.posts.search', ['posts' => $posts]);
-		}
-		elseif ($post == 4) {
-			
-			$posts = Post::where('category', 'Direito Civil')->latest()->paginate(5);
-			return view('admin.posts.search', ['posts' => $posts]);
-		}
-		elseif ($post == 5) {
-			
-			$posts = Post::where('category', 'Direito Criminal')->latest()->paginate(5);
-			return view('admin.posts.search', ['posts' => $posts]);
-		}
-		elseif ($post == 6) {
-			
-			$posts = Post::where('category', 'Direito Família')->latest()->paginate(5);
-			return view('admin.posts.search', ['posts' => $posts]);
-		}
-		elseif ($post == 7) {
-			
-			$posts = Post::where('category', 'Direito Imobiliário')->latest()->paginate(5);
-			return view('admin.posts.search', ['posts' => $posts]);
-		}
-		elseif ($post == 8) {
-			
-			$posts = Post::where('category', 'Direito Médico')->latest()->paginate(5);
-			return view('admin.posts.search', ['posts' => $posts]);
-		}
-		elseif ($post == 9) {
-			
-			$posts = Post::where('category', 'Direito Previdenciário')->latest()->paginate(5);
-			return view('admin.posts.search', ['posts' => $posts]);
-		}
-		elseif ($post == 10) {
-			
-			$posts = Post::where('category', 'Direito Trabalhista')->latest()->paginate(5);
-			return view('admin.posts.search', ['posts' => $posts]);
-		}
-		elseif ($post == 11) {
-			
-			$posts = Post::where('category', 'Direito Tributário')->latest()->paginate(5);
-			return view('admin.posts.search', ['posts' => $posts]);
-		}
-			
-	} // end function getSearch
+	} // end function search
 
 	// GET
 	// search by keywords
@@ -88,7 +39,7 @@ class SearchController extends Controller
 
 		return view('admin.posts.search')->with('posts' , $posts);
 
-	}
+	} // end function search02
 
     
 } // end class
