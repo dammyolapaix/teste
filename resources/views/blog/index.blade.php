@@ -10,8 +10,12 @@
       p.card-text02 {
         max-width: 65%;
         text-align: right;
-        font-size: 15px;
-        margin-bottom: 57px!important;
+        font-size: 13px;
+        margin-bottom: 50px!important;
+      }
+
+      .link-tags {
+          color: #747373;
       }
 
        @media only screen and (max-width: 400px) {
@@ -22,7 +26,7 @@
 
          .card-body {
           min-height: 310px;
-         }
+         }  
 
       }
 
@@ -62,7 +66,7 @@
                             <p class="card-text">{{substr(strip_tags($post->body), 0, 140) . '...'}}</p>
                             <div class="more-info">
                               <a href="{{route('blog.single', ['slug' => $post->slug])}}" class="btn btn-primary" style="position: absolute;bottom: 15px;">Leia mais</a>
-                              <p class="card-text02">@foreach($post->categories as $category) <i class="far fa-heart"></i> {{$category->name}}@endforeach</p>
+                              <p class="card-text02">@foreach($post->categories as $category) <i class="far fa-heart"></i> <a href="#" class="link-tags">{{$category->name}}</a>@endforeach</p>
                             </div>
                           </div>
                         </div>

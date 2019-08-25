@@ -20,6 +20,7 @@
 
             <div class="alert alert-success alert-dismissible fade show" role="alert">
                 <strong><i class="fas fa-check-circle"></i></strong>{{Session::get('success')}}
+                <button type="button" class="close" data-dimiss="alert" aria-label="Close"><span aria-hidden="true">X</span></button>
             </div>
 
         @endif

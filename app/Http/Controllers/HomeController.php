@@ -29,7 +29,7 @@ class HomeController extends Controller
             
            if ($role->name == 'Admin') {
                
-                $posts = Post::with('author')->paginate(6);
+                $posts = Post::with('author')->orderBy('id','desc')->paginate(6);
                 $role = 'Admin';
            }
            else {

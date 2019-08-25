@@ -14,8 +14,12 @@
       p.card-text02 {
         max-width: 65%;
         text-align: right;
-        font-size: 15px;
+        font-size: 14px;
         margin-bottom: 57px!important;
+      }
+
+      .link-tags {
+          color: #747373;
       }
 
       @media only screen and (max-width: 400px) {
@@ -87,7 +91,7 @@
                         <div class="col-md-4">
                           <div class="card" style="border-top: 10px solid #f5a623;min-height: 480px;max-height: 480px;">
                             <div class="image-wrapper" style="width: 100%;height: 200px;overflow: hidden;">
-                                  <a href="{{route('blog.single', ['slug' => $post->slug])}}"><img src="{{ $post->image }}" alt="VLT Advogados" style="width: 100%;height: 100%;"></a>
+                                  <a href="{{route('blog.single', ['slug' => $post->slug])}}"><img src="{{ $post->image }}" alt="VLT Advogados" style="width: 100%;"></a>
                              </div>
 
                              <div class="card-body">
@@ -95,7 +99,7 @@
                               <p class="card-text">{{substr(strip_tags($post->body), 0, 90) . '...'}}</p>
                               <div class="more-info">
                                 <a href="{{route('blog.single', ['slug' => $post->slug])}}" class="btn btn-primary" style="position: absolute;bottom: 15px;">Leia mais</a>
-                                <p class="card-text02">@foreach($post->categories as $category) <i class="far fa-heart"></i> {{$category->name}}@endforeach</p>
+                                <p class="card-text02">@foreach($post->categories as $category) <i class="far fa-heart"></i> <a href="" class="link-tags">{{$category->name}}</a>@endforeach</p>
                               </div>
                             </div>
                           </div>
