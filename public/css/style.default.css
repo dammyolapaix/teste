@@ -395,6 +395,24 @@ i[class*='icon-'] {
   font-size: 0.95rem;
 }
 
+#bt-register, #bt-reset, #cancel {
+  width: auto;
+  position: relative;
+  left: -65%;
+  padding: 9px 4%;
+}
+
+#bt-login {
+  width: 30%;
+  padding: 9px 4%;
+}
+
+#bt-reset {
+  width: 250px;
+  padding: 9px 4%;
+}
+
+
 /*
 * ==========================================================
 *     NAVBAR
@@ -1722,7 +1740,8 @@ nav#sidebar.shrinked a[aria-expanded="true"]::after {
 */
 .form-control {
   height: calc(2.4rem + 2px);
-  border: 1px solid #444951;
+  border: none;
+  border-bottom: 1px solid #444951;
   background: transparent;
   border-radius: 0;
   color: #979a9f;

@@ -60,8 +60,8 @@
                           <h5 class="card-title">{{ $post->title }}</h5>
                           <p class="card-text">{{substr(strip_tags($post->body), 0, 140) . '...'}}</p>
                           <div class="more-info">
-                              <a href="{{route('blog.single', ['slug' => $post->slug])}}" class="btn btn-primary" style="position: absolute;bottom: 15px;">Leia mais</a>
-                              <p class="card-text02">@foreach($post->categories as $category) <i class="far fa-heart"></i> <a href="" class="link-tags">{{$category->name}}</a>@endforeach</p>
+                              <a href="{{route('blog.single', ['slug' => $post->slug])}}" class="btn btn-primary bt-leia">Leia mais</a>
+                              <p class="card-text02"> <i class="far fa-heart"></i> {{date('j M, Y', strtotime($post->created_at))}}</p>
                           </div>
                         </div>
                       </div>
